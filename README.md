@@ -521,12 +521,12 @@ Include GIF "What are you doing here?"
 
 ## Week 16
 
-**Topic**: Final s Due
+**Topic**: Final projects Due
 
 **Dates**: 05/09
 
 **Assignments**:
- * Final  write-up due Friday (05/09) by 11:59PM ET
+ * Final project write-up due Friday (05/09) by 11:59PM ET
 
 [Back to schedule](#schedule)
 
