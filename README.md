@@ -160,10 +160,10 @@ The final project for the course will be a data analysis project where students 
 
 The course will follow a basic flow each week, with small differences if a homework or problem set is due or not.
 
- * Monday: Lecture
+ * Monday: Lecture 1 and discussion
  * Tuesday: Complete R tutorial
- * Wednesday: Discuss tutorial and/or problem set, as well as any loose ends from Monday
- * Friday: Open. Will change weekly; pay attention to CampusWire for updates. Exams/Problem Sets due on Fridays.
+ * Wednesday: Lecture 2 and discussion
+ * Friday: R tutorials. Note that Exams/Problem Sets are due on Fridays.
 
 [Back to ToC](#table-of-contents)
 
