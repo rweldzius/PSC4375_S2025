@@ -101,9 +101,11 @@ Letter grades are determined as per the standard Villanova grading system:
 
 ## Tutorials
 
-I will assign short weekly tutorials to assess your knowledge of the material covered in the reading and lectures that week. You will complete these in . While you are expected to complete them on time, they will be graded based on completion not on how correct the answers are. They will be due Tuesdays by 11:59PM ET. Late submissions will be marked as incomplete; **no exceptions**.
+I will assign short weekly tutorials to assess your knowledge of the material covered in the reading and lectures that week. You will complete these in RStudio. While you are expected to complete them on time, they will be graded based on completion not on how correct the answers are. They will be due Tuesdays by 11:59PM ET. Late submissions will be marked as incomplete; **no exceptions**.
 
 At the beginning of the term, these tutorials will focus on getting up to speed in R and over the course of the term, they will focus more on the theoretical aspects of data analysis.
+
+Use [these instructions](https://rweldzius.github.io/PSC4375_S2025/tutorials/psc4375_tutorial_setup.html) for getting the tutorials setup in RStudio. 
 
 [Back to ToC](#table-of-contents)
 
@@ -163,7 +165,7 @@ The course will follow a basic flow each week, with small differences if a homew
  * Monday: Lecture 1 and discussion
  * Tuesday: Complete R tutorial
  * Wednesday: Lecture 2 and discussion
- * Friday: R tutorials. Note that Exams/Problem Sets are due on Fridays.
+ * Friday: In-class practice with R. Note that Exams/Problem Sets are due on Fridays.
 
 [Back to ToC](#table-of-contents)
 
