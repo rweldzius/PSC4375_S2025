@@ -105,7 +105,7 @@ I will assign short weekly tutorials to assess your knowledge of the material co
 
 At the beginning of the term, these tutorials will focus on getting up to speed in R and over the course of the term, they will focus more on the theoretical aspects of data analysis.
 
-Use [these instructions](https://rweldzius.github.io/PSC4375_S2025/tutorials/psc4375_tutorial_setup.html) for getting the tutorials setup in RStudio. 
+Use [these instructions](https://rweldzius.github.io/PSC4375_S2025/blob/main/tutorials/psc4375_tutorial_setup.html) for getting the tutorials setup in RStudio. 
 
 [Back to ToC](#table-of-contents)
 
