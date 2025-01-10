@@ -406,7 +406,7 @@ Villanova University makes every reasonable effort to allow members of the commu
 
 **Spring Break!**
 
-![springbreak]https://github.com/rweldzius/PSC4375_S2025/lectures/figs/springbreak.gif
+<img src="./lectures/figs/springbreak.gif"/>
 
 [Back to schedule](#schedule)
 
