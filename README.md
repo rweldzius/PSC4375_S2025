@@ -406,7 +406,7 @@ Villanova University makes every reasonable effort to allow members of the commu
 
 **Spring Break!**
 
-Include GIF "What are you doing here?"
+![springbreak]https://github.com/rweldzius/PSC4375_S2025/lectures/figs/springbreak.gif
 
 [Back to schedule](#schedule)
 
