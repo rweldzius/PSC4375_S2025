@@ -406,7 +406,7 @@ Villanova University makes every reasonable effort to allow members of the commu
 
 **Spring Break!**
 
-<img src="./lectures/figs/springbreak.gif" width="50%" height="50%"/>
+<img src="./lectures/figs/springbreak.gif" width="30%" height="30%"/>
 
 [Back to schedule](#schedule)
 
