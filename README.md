@@ -201,7 +201,7 @@ tinytex::install_tinytex()  # install TinyTeX
 
 ### Blackboard
 
-This is the course management software used at Villanova University to support course learning. It is clunky, not user-friendly, and is thankfully on its way out soon. For these reasons, I will only utilize Blackboard to post course materials (e.g., additional readings), for you to submit your assignments, and to see your grades.
+This is the course management software used at Villanova University to support course learning. It is clunky, not user-friendly, and is thankfully on its way out soon. For these reasons, I will only utilize Blackboard for you to submit your assignments and to see your grades/feedback. NB: Blackboard will show your grade for each assignment but will note calculate your final grade. 
 
 ### Campuswire
 
