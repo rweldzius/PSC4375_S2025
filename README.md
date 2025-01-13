@@ -275,7 +275,7 @@ Villanova University makes every reasonable effort to allow members of the commu
 
 | Week | Date | Topic | Assignment Due |
 |:----|:-----|:------|:------|
-| [0](#week-0) | 01/13 | Introduction to QSS | F: PSet 0 |
+| [0](#week-0) | 01/13 | Introduction to QSS | F: [PSet 0](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset0.Rmd) |
 | [1](#week-1) | 01/20 | Causality: Randomized Experiments | T: QSS Tutorial 1 |
 | [2](#week-2) | 01/27 | Causality:  Observational Studies | T: QSS Tutorial 2 <br /> F: PSet 1  |
 | [3](#week-3) | 02/03 | Measurement: Descriptive Statistics  | T: QSS Tutorial 3  |
@@ -307,7 +307,8 @@ Villanova University makes every reasonable effort to allow members of the commu
  * F: [R Markdown, 2.1-2.6](https://bookdown.org/yihui/rmarkdown/)
 
 **Assignments**:
- * [Problem Set 0]() due Friday (01/17) by 11:59PM ET
+ * Setup R and RStudio by the start of class on Wednesday (01/15). See instructions (here)[#required-applications].
+ * [Problem Set 0](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset0.Rmd) due Friday (01/17) by 11:59PM ET
 
 [Back to schedule](#schedule)
 
