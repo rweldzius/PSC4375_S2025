@@ -307,7 +307,7 @@ Villanova University makes every reasonable effort to allow members of the commu
  * F: [R Markdown, 2.1-2.6](https://bookdown.org/yihui/rmarkdown/)
 
 **Assignments**:
- * Setup R and RStudio by the start of class on Wednesday (01/15). See instructions (here)[#required-applications].
+ * Setup R and RStudio by the start of class on Wednesday (01/15). See instructions [here](#required-applications). 
  * [Problem Set 0](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset0.Rmd) due Friday (01/17) by 11:59PM ET
 
 [Back to schedule](#schedule)
