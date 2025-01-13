@@ -7,6 +7,7 @@
   * [Course Objectives](#course-objectives)
   * [Prerequisites](#prerequisites)
   * [Grading](#grading)
+  * [Collaboration](#collaboration)
   * [Tutorials](#tutorials)
   * [Problem Sets](#problem-sets)
   * [Exams](#exams)
@@ -96,6 +97,12 @@ Letter grades are determined as per the standard Villanova grading system:
   * F: <60
 
 **Blackboard Gradebook**: although your grade for each assignment will appear on Blackboard, I will not use Blackboard to estimate your final grade. Blackboard will not calculate your final grade or estimate your final grade. I will calculate your final grade according to the percentages I highlight above, which you can also do using a simple Excel spreadsheet. 
+
+[Back to ToC](#table-of-contents)
+
+## Collaboration
+
+You are effectively learning a new language in this course. You should not assume that you can do this all on your own. Thus, for every problem set cycle (there will be five cycles) I will split you into equally-sized groups. You will sit with your group for each class and will do any in-class activities with these classmates. You will be each other's primary contacts for issues relating to the problem set. I recommend you setup your own channel in Campuswire to chat with each other or exchange emails/phone numbers. I also recommend you arrange a time to meet before the problem set is due to check your answers with each other and troubleshoot any problems with R code. I will announce the groups and a seating chart at the start of each cycle (e.g., Monday 1/20 for Pset 1). 
 
 [Back to ToC](#table-of-contents)
 
