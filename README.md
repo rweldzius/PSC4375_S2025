@@ -307,7 +307,7 @@ Villanova University makes every reasonable effort to allow members of the commu
  * F: [R Markdown, 2.1-2.6](https://bookdown.org/yihui/rmarkdown/)
 
 **Assignments**:
- * Problem Set 0 due Friday (01/17) by 11:59PM ET
+ * [Problem Set 0]() due Friday (01/17) by 11:59PM ET
 
 [Back to schedule](#schedule)
 
