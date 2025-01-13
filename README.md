@@ -50,7 +50,7 @@ In this course, you will learn to:
  * Summarize and visualize data
  * Be able to use linear regression to analyze data
  * Understand uncertainty in data analysis and how to quantify it
- * Use professional tools for data analysis such as R and 
+ * Use professional tools for data analysis such as R and RStudio
 
 [Back to ToC](#table-of-contents)
 
@@ -205,7 +205,7 @@ This is the course management software used at Villanova University to support c
 
 ### Campuswire
 
-I have set up a Campuswire workspace for our use this semester to help us better communicate with each other. You will need to create an account and join our workspace by following [this link]([https://campuswire.com/p/G45092D3C](https://campuswire.com/p/GD7AC473D). The secret PIN can be found on the first announcement on Blackboard. You are encouraged to adopt these [Slack etiquette tips](https://slack.com/blog/collaboration/etiquette-tips-in-slack). Most likely, you will utilize a similar communication system at a future job, so use this time wisely as you adopt best practices. 
+I have set up a Campuswire workspace for our use this semester to help us better communicate with each other. You will need to create an account and join our workspace by following [this link](https://campuswire.com/p/GD7AC473D). The secret PIN can be found on the first announcement on Blackboard. You are encouraged to adopt these [Slack etiquette tips](https://slack.com/blog/collaboration/etiquette-tips-in-slack). Most likely, you will utilize a similar communication system at a future job, so use this time wisely as you adopt best practices. 
 
 Here are the channels you should see upon joining the Campuswire workspace and that we will most often utilize:
 
@@ -314,7 +314,7 @@ Villanova University makes every reasonable effort to allow members of the commu
  * F: [R Markdown, 2.1-2.6](https://bookdown.org/yihui/rmarkdown/)
 
 **Assignments**:
- * Setup R and RStudio by the start of class on Wednesday (01/15). See instructions [here](#required-applications). 
+ * By Wednesday (01/15) before class: Setup R and RStudio. See instructions [here](#required-applications). Initiate Campuswire account (see [Required Applications](#required-applications) above). 
  * [Problem Set 0](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset0.Rmd) due Friday (01/17) by 11:59PM ET
 
 [Back to schedule](#schedule)
