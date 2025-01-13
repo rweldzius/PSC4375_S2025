@@ -74,7 +74,7 @@ Here is how each portion of the course contributes to the overall grade:
 | R Tutorials | 10% |
 | Four Problem Sets | 40% |
 | Exams | 30% |
-| Final  | 20% |
+| Final Project | 20% |
 
 You will use Blackboard for submission of the various assignments throughout the semester. 
 
