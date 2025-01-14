@@ -28,6 +28,7 @@ Beyond academia, leaders in government, private firms, and non-profits continue 
 
 So, you might be asking yourself, how is this course different from PSC 4175 "Intro to Data Science" or ECON 3137 "Intro to Econometrics" or STAT 1230 "Intro to Statistics"? Great question! There is certainly plenty of overlap. In the latter two courses, you might receive more attention to the mathematics that underpin the theory. In the former (taught by Prof. Weldzius), the focus is more on predictive models of data science. Similar to these courses, you will have some exposure to both theory and prediction; but throughout the course we will apply these methods to important research in the social sciences. If you learned one of these theories or methods in a previous course, use this time to perfect your understanding and seek new insights from its research applications.
 
+**Required Book**: Imai, Kosuke and Nora Webb Williams. 2022. *Quantitative Social Science: An Introduction in Tidyverse.* Princeton University Press. 
 
 **Class time and location**: M/W/F 12:50-13:40 in Bartley Hall 032.
 
