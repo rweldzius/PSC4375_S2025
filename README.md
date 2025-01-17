@@ -318,6 +318,9 @@ Villanova University makes every reasonable effort to allow members of the commu
  * By Wednesday (01/15) before class: Setup R and RStudio. See instructions [here](#required-applications). Initiate Campuswire account (see [Required Applications](#required-applications) above). 
  * [Problem Set 0](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset0.Rmd) due Friday (01/17) by 11:59PM ET
 
+**Clas Materials**:
+ * [Week 0: in-class practice R script](https://github.com/rweldzius/PSC4375_S2025/blob/main/lectures/Week0_R_practice.R)
+
 [Back to schedule](#schedule)
 
 ## Week 1
