@@ -333,6 +333,10 @@ Villanova University makes every reasonable effort to allow members of the commu
  * M: No Class (MLK, Jr. Day)
  * W: QSS 2.1-2.4
 
+**Slides**:
+ * W: [Lecture 1](https://rweldzius.github.io/PSC4375_S2025/lectures/psc4375_lecture_1_slides_handout.pdf)
+ * F: [Lecture 2](https://rweldzius.github.io/PSC4375_S2025/lectures/psc4375_lecture_2_slides_handout.pdf)
+
 **Assignments**:
  * QSS Tutorial 1 due Tuesday (01/21) by 11:59PM ET
  * Problem Set 1 posted (due next week)
