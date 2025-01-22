@@ -9,8 +9,7 @@ output:
     theme: "CambridgeUS"
     colortheme: "seahorse"
     fonttheme: "structurebold"
-header-includes:
-  - \usepackage{tcolorbox}    
+classoption: "handout"
 ---
 
 ```{css,echo = F}
