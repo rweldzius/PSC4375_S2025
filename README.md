@@ -339,7 +339,7 @@ Villanova University makes every reasonable effort to allow members of the commu
 
 **Assignments**:
  * QSS Tutorial 1 due Tuesday (01/21) by 11:59PM ET
- * Problem Set 1 posted (due next week)
+ * [Problem Set 1](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset1.Rmd) posted (due next week)
 
 [Back to schedule](#schedule)
 
@@ -354,7 +354,7 @@ Villanova University makes every reasonable effort to allow members of the commu
 
 **Assignments**:
  * QSS Tutorial 2 due Tuesday (01/28) by 11:59PM ET
- * Problem Set 1 due Friday (01/31) by 11:59PM ET
+ * [Problem Set 1](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset1.Rmd) due Friday (01/31) by 11:59PM ET
 
 [Back to schedule](#schedule)
 
