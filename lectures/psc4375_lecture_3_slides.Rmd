@@ -9,7 +9,6 @@ output:
     theme: "CambridgeUS"
     colortheme: "seahorse"
     fonttheme: "structurebold"
-classoption: "handout"
 ---
 
 ```{css,echo = F}

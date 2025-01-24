@@ -1,0 +1,22 @@
+\frametitle{Histograms in R: adding a vertical \texttt {median} line}
+\phantomsection\label{histograms-in-r-adding-a-vertical-median-line-1}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{vignettes }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ age,}
+             \AttributeTok{y =}\NormalTok{ ..density..)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{binwidth =} \DecValTok{5}\NormalTok{, }\CommentTok{\# how wide for each bin}
+                 \AttributeTok{boundary =} \DecValTok{0}\NormalTok{, }\CommentTok{\# bin position}
+                 \AttributeTok{alpha=}\FloatTok{0.75}\NormalTok{) }\SpecialCharTok{+} \CommentTok{\# reduces opaqueness}
+  \FunctionTok{geom\_vline}\NormalTok{(}\AttributeTok{xintercept =} \FunctionTok{median}\NormalTok{(vignettes}\SpecialCharTok{$}\NormalTok{age)) }\SpecialCharTok{+}
+  \FunctionTok{annotate}\NormalTok{(}\AttributeTok{geom =} \StringTok{"text"}\NormalTok{, }\AttributeTok{x =} \FunctionTok{median}\NormalTok{(vignettes}\SpecialCharTok{$}\NormalTok{age),}
+           \AttributeTok{y=}\NormalTok{.}\DecValTok{03}\NormalTok{, }\AttributeTok{label =} \StringTok{"Median"}\NormalTok{, }\AttributeTok{hjust =} \SpecialCharTok{{-}}\FloatTok{0.1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{breaks =} \FunctionTok{seq}\NormalTok{(}\DecValTok{20}\NormalTok{, }\DecValTok{80}\NormalTok{,}\AttributeTok{by =} \DecValTok{10}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Distribution of Respondent\textquotesingle{}s Age"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Density"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"Age"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_bw}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics{psc4375_lecture_5_slides_files/figure-beamer/unnamed-chunk-11-1} \end{center}

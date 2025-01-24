@@ -9,6 +9,7 @@ output:
     theme: "CambridgeUS"
     colortheme: "seahorse"
     fonttheme: "structurebold"
+classoption: "handout"
 ---
 
 ```{css,echo = F}
@@ -31,7 +32,7 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 })
 ```
 
-# Changing minds on gay marriage \pause
+# Changing minds on gay marriage
 
   * Question: can we effectively persuade people to change their minds? \pause
   * Hugely important question for political campaigns, companies, etc. \pause
@@ -43,7 +44,7 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 
 ---
 
-# Causal effects and counterfactuals \pause
+# Causal effects and counterfactuals
 
   * What does "$T_i$ causes $Y_i$" mean? $\rightsquigarrow$ **counterfactuals**, "what if" \pause
   * Would citizen $i$ have supported gay marriage if they had contact with a member of the LGBT community? \pause
@@ -56,7 +57,7 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 
 ---  
 
-# Sigma notation \pause
+# Sigma notation
 
   * We will often refer to the **sample size** (number of units) as $n$.  \pause
   * We often have $n$ measurements of some variable: $(Y_1,Y_2,...,Y_n)$ \pause
@@ -65,18 +66,18 @@ knitr::knit_hooks$set(chunk = function(x, options) {
   $$
   Y_1 + Y_2 + ... + Y_n
   $$
-   \pause
+  
   * Notation is a bit clunky, so we often use the **Sigma notation**:
-   \pause
+   
   $$
   \sum_{i=1}^n Y_i = Y_1 + Y_2 + ... + Y_n
   $$
-   \pause
+  
   * $\sum_{i=1}^n$ means sum each value from $Y_1$ to $Y_n$
   
 ---
 
-# Averages  \pause
+# Averages
 
   * The **sample average** or **sample mean** is simply the sum of all values divided by the number of values. \pause
   
@@ -85,38 +86,40 @@ knitr::knit_hooks$set(chunk = function(x, options) {
   $$
   \bar{Y} = \frac{1}{n} \sum_{i=1}^n Y_i
   $$
-   \pause
+  
   * Suppose we surveyed 6 people and 3 supported gay marriage: 
    \pause
+   
   $$
   \bar{Y} = \frac{1}{6} (1 + 1 + 1 + 0 + 0 + 0) = 0.5
   $$
   
 ---
 
-# Quantity of interest \pause
+# Quantity of interest
 
   * We want to estimate the average causal effects over all units: \vspace{-5pt} \pause
   
   $$
   \text{Sample Average Treatment Effect (SATE) } = \frac{1}{n} \sum_{i=1}^n \left( Y_i(1) - Y_i(0) \right)
   $$
-   \pause
+   
   * Why can't we just calculate this quantity directly? \pause
   * What we can estimate instead: \vspace{-5pt} \pause
   
   $$
   \text{Difference in means } = \bar{Y}_{treated} - \bar{Y}_{control}
   $$
-     \pause
+    
   - $\bar{Y}_{treated}$: observed average outcome for treated group
   - $\bar{Y}_{control}$: observed average outcome for control group
+   
    \pause
   * When will the difference-in-means be a good estimate of the SATE?
   
 ---
 
-# Randomized control trials (RCTs) \pause
+# Randomized control trials (RCTs)
 
   * **Randomize control trial**: each unit's treatment assignment is determined by chance \pause
     - e.g., flip a coin; draw read and blue chips from a hat; etc. \pause
@@ -129,7 +132,7 @@ knitr::knit_hooks$set(chunk = function(x, options) {
     
 ---
 
-# Some potential problems with RCTs \pause
+# Some potential problems with RCTs
 
   * **Placebo effects**: \pause
     - Respondents will be affected by any intervention, even if they shouldn't have any effect \pause
@@ -138,7 +141,7 @@ knitr::knit_hooks$set(chunk = function(x, options) {
     
 ---
 
-# Balance checking \pause
+# Balance checking
 
   * Can we determine if randomization "worked"? \pause
   * If it did, we shouldn't see large differences between treatment and control group on **pretreatment variable** \pause
@@ -150,7 +153,7 @@ knitr::knit_hooks$set(chunk = function(x, options) {
     
 ---
 
-# Multiple treatments \pause
+# Multiple treatments
 
   * Instead of 1 treatment, we might have multiple **treatment arms**: \pause
     - Control condition

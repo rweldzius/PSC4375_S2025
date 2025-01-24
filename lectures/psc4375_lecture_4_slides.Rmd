@@ -6,10 +6,9 @@ institute: "Villanova University"
 date: "Slides Updated: `r Sys.Date()`"
 output:
   beamer_presentation:
-    theme: "AnnArbor"
-    colortheme: "dolphin"
+    theme: "CambridgeUS"
+    colortheme: "seahorse"
     fonttheme: "structurebold"
-  classoption: t
 ---
 
 ```{css,echo = F}
@@ -36,8 +35,10 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 
   * Data from study of the effect of minimum wage
   
-```{r}
-
+```{r, echo=F}
+library(tidyverse)
+data(minwage, package = "qss")
+head(minwage)
 ```
   
 ---
@@ -46,30 +47,33 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 
   
 ```{r}
-# head(minwagewageAfter, n = 200)
+head(minwage$wageAfter, n = 200)
 ```
 
 ---
 
 # How to summarize data
 
-  * How should we summarize the wages data? Many possibilities!
-    - Up to now: focus on **averages** or means of variables
+  * How should we summarize the wages data? Many possibilities! \pause
+    - Up to now: focus on **averages** or means of variables \pause
     
-  * Two salient features of a variable that we want to know:
-    - **Central tendency**: where is the middle/typical/average value
+  * Two salient features of a variable that we want to know: \pause
+    - **Central tendency**: where is the middle/typical/average value \pause
     - **Spread** around the center: are all values to the center or spread out?
     
 ---
 
 # Center of the data
 
-  * "Center" of the data: typical/average value
-  * **Mean**: sum of the values divided by the number of observations
+  * "Center" of the data: typical/average value \pause
+  * **Mean**: sum of the values divided by the number of observations \pause
+  
   $$
   \bar{x} = \frac{1}{n} \sum_{i=1}^{n}{x_i}
   $$
-  * **Median**:
+  
+  * **Median**: \pause
+  
   $$
   \text{median} = 
    \begin{cases}
@@ -77,80 +81,83 @@ knitr::knit_hooks$set(chunk = function(x, options) {
       \frac{\text{sum of two middle values}}{2} & \text{if number of entries is even}
     \end{cases}  
   $$
+  
   * In **R**: `mean()` and `median()` 
   
 ---
 
 # Mean vs median
 
-  * Median more robust to **outliers**:
+  * Median more robust to **outliers**: \pause
     - Example 1: data = ${0,1,2,3,5}$. Mean? Median?
-    \vspace{10pt}
+    \vspace{10pt} \pause
     - Example 2: data = ${0,1,2,3,100}$. Mean? Median?
-    \vspace{10pt}
+    \vspace{10pt} \pause
   * What does Mark Zuckerberg do to the mean vs. median income?  
   
 ---
 
 # Spread of the data
 
-  * Are the values of the variable close to the center?
-  * **Range**: $[\text{min}(X), \text{max}(X)]$
-  * **Quantile** (quartile, percentile, etc.): divide data into equal sized groups.
-    - 25th percentile: lower quartile (25% of the data below this value)
-    - 50th percentile: median (50% of the data below this value)
-    - 75th percentile: upper quartile (75% of the data below this value)
-  * **Interquartile range** (IQR): a measure of variability
-    - How spread out is the middle half of the data?
-    - Is most of the data really close to the median or are the values spread out?
+  * Are the values of the variable close to the center? \pause
+  * **Range**: $[\text{min}(X), \text{max}(X)]$ \pause
+  * **Quantile** (quartile, percentile, etc.): divide data into equal sized groups. \pause
+    - 25th percentile: lower quartile (25% of the data below this value) \pause
+    - 50th percentile: median (50% of the data below this value) \pause
+    - 75th percentile: upper quartile (75% of the data below this value) \pause
+  * **Interquartile range** (IQR): a measure of variability \pause
+    - How spread out is the middle half of the data? \pause
+    - Is most of the data really close to the median or are the values spread out? \pause
   * **R** function: `range()`, `summary()`, `IQR()`
   
 ---
 
 # Standard deviation
 
-  * **Standard deviation**: On average, how far away are data points from the mean?
+  * **Standard deviation**: On average, how far away are data points from the mean? \pause
   
   $$
   \text{standard deviation} = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}{\left( x_i - \bar{x} \right)^2}}
   $$
-  * Steps:
-    1. Subtract each data point by the mean
-    2. Square each resulting difference
-    3. Take the sum of these values
-    4. Divide by $n-1$ (or $n$, doesn't matter much)
-    5. Take the square root
-  * **Variance**: standard deviation$^2$
+  
+  * Steps:  \pause
+    1. Subtract each data point by the mean \pause
+    2. Square each resulting difference \pause
+    3. Take the sum of these values \pause
+    4. Divide by $n-1$ (or $n$, doesn't matter much) \pause
+    5. Take the square root \pause
+  * **Variance**: standard deviation$^2$ \pause
   * Why not just take the average deviations from mean without squaring? 
   
 ---
 
 # How large is large?
 
-  * Is a wage of 5.30 an hour large?
-  * Better question: is 5.30 large relative to the distribution of the data?
-    - Big in one dataset might be small in another!
-    - Different units, difference spreads of the data, etc.
-  * Need a way to put any variable on **common units**
-  * **z-score**: 
+  * Is a wage of 5.30 an hour large? \pause
+  * Better question: is 5.30 large relative to the distribution of the data? \pause
+    - Big in one dataset might be small in another! \pause
+    - Different units, difference spreads of the data, etc. \pause
+  * Need a way to put any variable on **common units** \pause
+  * **z-score**:  \pause
   
   $$
   \text{z-score of }x_i = \frac{x_i - \text{mean of }x}{\text{standard deviation of }x} 
   $$
-  * Interpretation:
-    - Positive values above the mean, negative values below the mean
-    - Units now on the scale of **standard deviations away from the mean**
+  
+  * Interpretation: \pause
+    - Positive values above the mean, negative values below the mean \pause
+    - Units now on the scale of **standard deviations away from the mean** \pause
     - Intuition: data more than 3 SDs away from mean are rare
 
 ---
 
 # z-score example
 
-  * Jane works at The Grog where there's a tip jar.
-  * She's been keeping track of herh daily tips:
-    - Average tip of $1.56 with a standard deviation of 20 cents. 
+  * Jane works at The Grog where there's a tip jar. \pause
+  * She's been keeping track of herh daily tips: \pause
+    - Average tip of $1.56 with a standard deviation of 20 cents.  \pause
   * Yesterday, Jane got $1.86 in tips. How big is this?
-  \vspace{10pt}
+  \vspace{10pt} \pause
   * Today she got $0.56, what about that? 
   
     
