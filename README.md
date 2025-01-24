@@ -111,6 +111,8 @@ You are effectively learning a new language in this course. You should not assum
 
 I will assign short weekly tutorials to assess your knowledge of the material covered in the reading and lectures that week. You will complete these in RStudio. While you are expected to complete them on time, they will be graded based on completion not on how correct the answers are. They will be due Tuesdays by 11:59PM ET. Late submissions will be marked as incomplete; **no exceptions**.
 
+**NOTE**: For tutorial 1-6 you should scroll down and find the "QSS Tidyverse Tutorial" version. For tutorials 7-10, you can use the "QSS Tutorial" version.  
+
 At the beginning of the term, these tutorials will focus on getting up to speed in R and over the course of the term, they will focus more on the theoretical aspects of data analysis.
 
 Use [these instructions](https://rweldzius.github.io/PSC4375_S2025/tutorials/psc4375_tutorial_setup.html) for getting the tutorials setup in RStudio. 
@@ -285,7 +287,7 @@ Villanova University makes every reasonable effort to allow members of the commu
 |:----|:-----|:------|:------|
 | [0](#week-0) | 01/13 | Introduction to QSS | F: [PSet 0](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset0.Rmd) |
 | [1](#week-1) | 01/20 | Causality: Randomized Experiments | T: QSS Tutorial 1 |
-| [2](#week-2) | 01/27 | Causality:  Observational Studies | T: QSS Tutorial 2 <br /> F: PSet 1  |
+| [2](#week-2) | 01/27 | Causality:  Observational Studies | T: QSS Tutorial 2 <br /> F: [PSet 1](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset1.Rmd)  |
 | [3](#week-3) | 02/03 | Measurement: Descriptive Statistics  | T: QSS Tutorial 3  |
 | [4](#week-4) | 02/10 | Measurement: Sampling & Bivariate Statistics | T: QSS Tutorial 4 <br /> F: PSet 2 |
 | [5](#week-5) | 02/17 | Prediction: Elections & Regression  | T: QSS Tutorial 5  |
@@ -339,7 +341,7 @@ Villanova University makes every reasonable effort to allow members of the commu
 
 **Assignments**:
  * QSS Tutorial 1 due Tuesday (01/21) by 11:59PM ET
- * Problem Set 1 posted (due next week)
+ * [Problem Set 1](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset1.Rmd) posted (due next week)
 
 [Back to schedule](#schedule)
 
@@ -354,7 +356,7 @@ Villanova University makes every reasonable effort to allow members of the commu
 
 **Assignments**:
  * QSS Tutorial 2 due Tuesday (01/28) by 11:59PM ET
- * Problem Set 1 due Friday (01/31) by 11:59PM ET
+ * [Problem Set 1](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset1.Rmd) due Friday (01/31) by 11:59PM ET
 
 [Back to schedule](#schedule)
 
