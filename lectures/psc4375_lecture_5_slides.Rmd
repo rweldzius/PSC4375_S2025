@@ -33,9 +33,10 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 
 # Studying political efficacy
 
-  - 2002 WHO survey of people in China and Mexico
-  - Goal: determine feelings of political efficacy
-  - Question: "How much say do you have in getting the government to address issues that interest you?"
+  - 2002 WHO survey of people in China and Mexico  \pause
+  - Goal: determine feelings of political efficacy \pause
+  - Question: "How much say do you have in getting the government to address issues that interest you?" \pause
+  
     1. No say at all
     2. little say
     3. some say
@@ -93,7 +94,8 @@ ggplot(data = vignettes,
   scale_x_discrete(labels = c("None", "A little",
                   "Some", "A lot", "Unlimited")) +
   xlab("Self-reported political efficacy") +
-  ylab("Proportion of Respondents")
+  ylab("Proportion of Respondents") +
+  theme_bw()
 ```
 
 ---
@@ -104,20 +106,20 @@ ggplot(data = vignettes,
   
 ```{r, echo=T, fig.show='hide'}
 vignettes %>%
-  ggplot(aes(x = as.factor(self),
-             y=..prop..,
-             group = 1)) +
+  ggplot(aes(x = as.factor(self),y=..prop..,group = 1)) +
   geom_bar() + 
   scale_x_discrete(labels = c("None", "A little",
                   "Some", "A lot", "Unlimited")) +
   xlab("Self-reported political efficacy") +
-  ylab("Proportion of Respondents")
+  ylab("Proportion of Respondents") +
+  theme_bw()
 ```
 
-  - Arguments:
-    - `aes()`: the aestetic mapping of the plot (what you see)
-    - `scale_x_discrete()`: changes the scale of the axis
-    - `xlab()`, `ylab()` are axis labels
+  - Arguments:  
+    - `aes()`: the aestetic mapping of the plot (what you see)  \pause
+    - `scale_x_discrete()`: changes the scale of the axis  \pause
+    - `xlab()`, `ylab()` are axis labels  \pause
+    - `theme_bw()` removes grey background
     
 ---
 
@@ -142,18 +144,19 @@ vignettes %>%
 
 # How to create histograms?
 
-  - How to create a histogram by hand:
-    1. create bins along the variable of interest
-    2. count number of observations in each bin
-    3. **density** = bin height
+  - How to create a histogram by hand: \pause
+    1. create bins along the variable of interest \pause
+    2. count number of observations in each bin \pause
+    3. **density** = bin height 
     
   $$
   \text{density} = \frac{\text{proportion of observations in bin}}{\text{bin width}}
   $$
+  \pause 
   
-  - The areas of the bins $=$ proportion of observations in those bins.
-    - $\rightsquigarrow$ area of the blocks sum to 1 (100%)
-    - Can lead to confusion: height of block can go above 1!
+  - The areas of the bins $=$ proportion of observations in those bins.  \pause
+    - $\rightsquigarrow$ area of the blocks sum to 1 (100%)  \pause
+    - Can lead to confusion: height of block can go above 1!  \pause
     - With equal-width bins, height is proportional to proportion in bin.
     
 ---
@@ -185,7 +188,7 @@ vignettes %>%
 
 # Histograms in R: adding a vertical `median` line
 
-```{r,echo=F,,fig.width=4, fig.height=3}
+```{r,echo=F,fig.width=4, fig.height=3}
 vignettes %>%
   ggplot(aes(x = age,
              y = ..density..)) +
@@ -207,7 +210,7 @@ vignettes %>%
 
 # Histograms in R: adding a vertical `median` line
 
-```{r,echo=T, results='hide'}
+```{r,echo=T, fig.show='hide'}
 vignettes %>%
   ggplot(aes(x = age,
              y = ..density..)) +
@@ -230,9 +233,55 @@ vignettes %>%
 
   - A **boxplot** can characterize the distribution of continuous variables
 
-```{r, echo=F}
+```{r, echo=F,fig.width=3.5, fig.height=2.7}
 vignettes %>%
   ggplot(aes(y = age)) +
-  geom_boxplot()
+  geom_boxplot() + 
+  scale_y_continuous(breaks = seq(20, 80,by = 10)) +
+  xlim(-.75,.75) +
+  labs(title = "Distribution of Age",
+       y = "Age") +
+  theme_bw() +
+  theme(axis.text.x=element_blank(),axis.ticks.x=element_blank())
 ```
 
+
+---
+
+# Boxplots in R
+
+  - "Box" represents range between lower and upper quartile
+  - "Whiskers" represents either:
+    - 1.5 $x$ IQR or max/min of the data, whichever is smaller
+    - Points beyond whiskers are outliers 
+  - Use `geom_boxplot()` in `ggplot`
+
+---
+
+# Boxplots in R
+
+```{r, echo=T, fig.show='hide', fig.width=4, fig.height=3}
+vignettes %>%
+  ggplot(aes(y = age)) + 
+  geom_boxplot() +
+  scale_y_continuous(breaks = seq(20, 80,by = 10)) + 
+  xlim(-.75,.75) + 
+  labs(title = "Distribution of Age", y = "Age") +
+  theme_bw() + 
+  theme(axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())
+```
+\vspace{-5pt}
+
+  - Added options:
+    - `scale_y_continuous`: scale the y axis
+    - `xlim`: alter range of x-axis so box is less wide
+    - `theme_bw`: removes grey background
+    - `theme`: allows you to adjust other parts of figure
+
+---
+
+# Review
+
+  - Visualizing single discrete/categorical variables: **barplots** \pause
+  - Visualizing continuous variables: **histograms, boxplots**

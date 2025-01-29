@@ -1,0 +1,14 @@
+\frametitle{Scatterplot}
+\phantomsection\label{scatterplot-5}
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{leaders[}\DecValTok{3}\NormalTok{, }\FunctionTok{c}\NormalTok{(}\StringTok{"politybefore"}\NormalTok{,}\StringTok{"polityafter"}\NormalTok{)]}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##   politybefore polityafter
+## 3           -6          -8
+\end{verbatim}
+
+\begin{center}\includegraphics{psc4375_lecture_8_slides_files/figure-beamer/unnamed-chunk-15-1} \end{center}

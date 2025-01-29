@@ -35,6 +35,18 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 
   * Data from study of the effect of minimum wage
   
+```{r, echo=T, results='hide'}
+library(tidyverse)
+data(minwage, package = "qss")
+head(minwage)
+```
+  
+---
+
+# Lots of data
+
+  * Data from study of the effect of minimum wage
+  
 ```{r, echo=F}
 library(tidyverse)
 data(minwage, package = "qss")
@@ -71,6 +83,7 @@ head(minwage$wageAfter, n = 200)
   $$
   \bar{x} = \frac{1}{n} \sum_{i=1}^{n}{x_i}
   $$
+  \pause 
   
   * **Median**: \pause
   
@@ -81,6 +94,7 @@ head(minwage$wageAfter, n = 200)
       \frac{\text{sum of two middle values}}{2} & \text{if number of entries is even}
     \end{cases}  
   $$
+  \pause 
   
   * In **R**: `mean()` and `median()` 
   
@@ -119,13 +133,16 @@ head(minwage$wageAfter, n = 200)
   $$
   \text{standard deviation} = \sqrt{\frac{1}{n-1}\sum_{i=1}^{n}{\left( x_i - \bar{x} \right)^2}}
   $$
+  \pause 
   
   * Steps:  \pause
+  
     1. Subtract each data point by the mean \pause
     2. Square each resulting difference \pause
     3. Take the sum of these values \pause
     4. Divide by $n-1$ (or $n$, doesn't matter much) \pause
     5. Take the square root \pause
+    
   * **Variance**: standard deviation$^2$ \pause
   * Why not just take the average deviations from mean without squaring? 
   
@@ -143,6 +160,7 @@ head(minwage$wageAfter, n = 200)
   $$
   \text{z-score of }x_i = \frac{x_i - \text{mean of }x}{\text{standard deviation of }x} 
   $$
+  \pause 
   
   * Interpretation: \pause
     - Positive values above the mean, negative values below the mean \pause
@@ -154,9 +172,9 @@ head(minwage$wageAfter, n = 200)
 # z-score example
 
   * Jane works at The Grog where there's a tip jar. \pause
-  * She's been keeping track of herh daily tips: \pause
+  * She's been keeping track of her daily tips: \pause
     - Average tip of $1.56 with a standard deviation of 20 cents.  \pause
-  * Yesterday, Jane got $1.86 in tips. How big is this?
+  * Yesterday, Jane got a $1.86 tip. How big is this?
   \vspace{10pt} \pause
   * Today she got $0.56, what about that? 
   

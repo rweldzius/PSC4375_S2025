@@ -76,6 +76,7 @@ knitr::knit_hooks$set(chunk = function(x, options) {
   * How can we find a good comparison group? \pause
   * Depends on the data we have available \pause
   * Three general types of observational study **research designs**: \pause
+    
     1. **Cross-sectional design**: compare outcomes treated and control units at one point in time \pause
     2. **Before-and-after design**: compare outcomes before and after a unit has been treated, but need over-time data on treated group \pause
     3. **Differences-in-differences design**: use before/after information for the treated and control group; need over-time data on treated and control group
@@ -95,6 +96,7 @@ knitr::knit_hooks$set(chunk = function(x, options) {
   $$
   \bar{Y}_{treated}^{after} - \bar{Y}_{control}^{after}
   $$
+  \pause 
   
   * Could there be confounders?
   
@@ -124,7 +126,8 @@ knitr::knit_hooks$set(chunk = function(x, options) {
   $$
   \bar{Y}_{treated}^{after} - \bar{Y}_{treated}^{before}
   $$
-
+  \pause 
+  
   * Threat to inference: **time-varying confounders**
     - Time trend: Labour just did better overall in 1997 compared to 1992
     
@@ -138,6 +141,7 @@ knitr::knit_hooks$set(chunk = function(x, options) {
   $$
   \left(\bar{Y}_{treated}^{after} - \bar{Y}_{treated}^{before} \right) - \left(\bar{Y}_{control}^{after} - \bar{Y}_{control}^{before} \right)
   $$
+  \pause 
   
   * Change in treated group above and beyond the change in control group  \pause
   

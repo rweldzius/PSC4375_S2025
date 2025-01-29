@@ -1,0 +1,140 @@
+---
+title: "PSC4375: Missing Data"
+subtitle: "Week 3: Lecture 6"
+author: "Prof. Weldzius"
+institute: "Villanova University"
+date: "Slides Updated: `r Sys.Date()`"
+output:
+  beamer_presentation:
+    theme: "CambridgeUS"
+    colortheme: "seahorse"
+    fonttheme: "structurebold"
+---
+
+```{css,echo = F}
+.small .remark-code { /*Change made here*/
+  font-size: 85% !important;
+}
+.tiny .remark-code { /*Change made here*/
+  font-size: 50% !important;
+}
+```
+
+```{r,include=F}
+set.seed(123)
+options(width=60)
+knitr::opts_chunk$set(fig.align='center',fig.width=9,fig.height=5,message=F,warning=F)
+def.chunk.hook  <- knitr::knit_hooks$get("chunk")
+knitr::knit_hooks$set(chunk = function(x, options) {
+  x <- def.chunk.hook(x, options)
+  ifelse(options$size != "normalsize", paste0("\n \\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
+})
+```
+
+# Civilian attitudes and war against insurgency
+
+  - War in Afghanistan: counter-insurgency war
+    - Military against insurgents
+    - Key to victory: winning hearts and minds of civilians
+    - Aid provision, information campaign, minimizing civilian casualties
+    
+  - How does exposure to violence affect support for Taliban coalition?
+
+\begin{center}
+\includegraphics[width=.5\textwidth]{figs/afghan_map.png}
+\end{center}
+---
+
+# Afghan study
+
+```{r}
+library(tidyverse)
+data(afghan, package = "qss")
+head(afghan[,1:8])
+```
+
+---
+
+# Missing data
+
+  - **Nonresponse**: respondent can't or won't answer question
+    -Sensitive questions $\rightsquigarrow$ **social desirability bias**
+    -Some countries lack official statistics like unemployment
+    - Leads to missing data
+    
+  - Missing data in R: a special value `{\color{green}NA}`
+  - Causes problems with calculating statistics:
+  
+```{r}
+## prop. of those who got hurt by ISAF
+mean(afghan$violent.exp.ISAF)
+```
+  
+    
+---
+
+# Handling missing data in R (UPDATE TIDY)
+
+  - Adding `na.rm = TRUE` to some functions removes missing data
+
+```{r}
+afghan %>% summarize(mean(violent.exp.ISAF, na.rm = TRUE))
+```
+
+  - Or, you can explicitly remove missing values using `na.omit()` function:
+  
+```{r}
+afghan %>% summarize(mean(na.omit(violent.exp.ISAF)))
+```
+  
+  - See number of `NA`s with `count()` + `group_by()`
+  
+```{r}
+afghan %>%
+  group_by(violent.exp.ISAF) %>%
+  count()
+summary(afghan$violent.exp.ISAF)
+```
+  
+---
+
+# Available-case vs. complete-case analysis
+
+  - **Available-case analysis**: use the data you have for that variable:
+  
+```{r}
+afghan %>%
+  summarize(sum(!is.na(violent.exp.ISAF)))
+afghan %>%
+  summarize(mean(violent.exp.ISAF,na.rm=TRUE))
+```
+
+---
+
+# Available-case vs. complete-case analysis
+
+  - **Complete-case analysis**: only use units that have data on all variables 
+    - Also called **listwise deletion**
+    
+```{r}
+dim(na.omit(afghan))
+afghan %>%
+  na.omit() %>%
+  summarize(mean(violent.exp.ISAF))
+```
+    
+---
+
+# Non-response and other biases
+
+  - Nonresponse can create bias
+  - More violent areas $\rightsquigarrow$ more non-response:
+  
+```{r}
+afghan %>%
+  group_by(province) %>%
+  summarize(violent.exp.taliban = mean(is.na(violent.exp.taliban)),
+            violent.exp.ISAF = mean(is.na(violent.exp.ISAF)))
+```
+
+  - $\rightsquigarrow$ oversampling citizens with less exposure to violence! 

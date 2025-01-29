@@ -1,0 +1,271 @@
+---
+title: "PSC4375: Summarizing bivariate relationships: cross-tabs, scatterplots, and correlation"
+subtitle: "Week 4: Lecture 8"
+author: "Prof. Weldzius"
+institute: "Villanova University"
+date: "Slides Updated: `r Sys.Date()`"
+output:
+  beamer_presentation:
+    theme: "CambridgeUS"
+    colortheme: "seahorse"
+    fonttheme: "structurebold"
+---
+
+```{css,echo = F}
+.small .remark-code { /*Change made here*/
+  font-size: 85% !important;
+}
+.tiny .remark-code { /*Change made here*/
+  font-size: 50% !important;
+}
+```
+
+```{r,include=F}
+set.seed(123)
+options(width=60)
+knitr::opts_chunk$set(fig.align='center',fig.width=9,fig.height=5,message=F,warning=F)
+def.chunk.hook  <- knitr::knit_hooks$get("chunk")
+knitr::knit_hooks$set(chunk = function(x, options) {
+  x <- def.chunk.hook(x, options)
+  ifelse(options$size != "normalsize", paste0("\n \\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
+})
+```
+
+# Effect of assasination attempts 
+
+```{r}
+library(tidyverse)
+data(leaders, package = "qss")
+head(leaders[,1:7])
+```
+
+# Contingency tables
+
+  - With two categorical variables, we can create **contingency tables**
+    - Also known as **cross-tabs**
+    - Rows are the values of one variable, columns the other
+    
+```{r}
+leaders %>%
+  group_by(civilwarbefore,civilwarafter) %>%
+  count() %>%
+  spread(civilwarafter, n)
+```
+
+  - Quick summary how the two variables "go together" 
+
+---
+
+# Cross-tabs with proportions
+
+```{r}
+leaders %>%
+  group_by(civilwarbefore,civilwarafter) %>%
+  count() %>%
+  ungroup() %>%
+  mutate(prop = n/ sum(n)) %>%
+  select(-n) %>%
+  spread(civilwarafter, prop, drop = T)
+```
+
+---
+
+# Scatterplot
+
+```{r, echo=F, fig.width=4, fig.height=3}
+leaders %>%
+  ggplot(aes(x = politybefore, y = polityafter)) +
+  geom_point(shape = 21) +
+  labs(title = "Democracy before/after assasination attempts",
+       x = "Democracy Level (Before)",
+       y = "Democracy Level (After)") +
+  theme_bw() +
+  theme(plot.title = element_text(size=12))
+```
+
+---
+
+# Scatterplot
+
+  - Each point on the scatterplot $(x_i, y_i)$
+  - Use `geom_point()` function in `ggplot`
+  
+```{r, echo=T, fig.show='hide'}
+leaders %>%
+  ggplot(aes(x = politybefore, y = polityafter)) +
+  geom_point(shape = 21) +
+  labs(title = "Democracy before/after assasination attempts",
+       x = "Democracy Level (Before)",
+       y = "Democracy Level (After)") +
+  theme_bw() +
+  theme(plot.title = element_text(size=12))
+```
+
+---
+
+# Scatterplot
+
+```{r, echo=T}
+leaders[1, c("politybefore","polityafter")]
+```
+
+
+```{r, echo=F, fig.width=3, fig.height=2}
+leaders %>%
+  ggplot(aes(x = politybefore, y = polityafter)) +
+  geom_point(shape = 21, alpha=0) +
+  labs(title = "Democracy before/after assasination attempts",
+       x = "Democracy Level (Before)",
+       y = "Democracy Level (After)") +
+  theme_bw() +
+  theme(plot.title = element_text(size=8),
+        axis.title.x = element_text(size=7),
+        axis.title.y = element_text(size=7))
+```
+
+---
+
+# Scatterplot
+
+```{r, echo=T}
+leaders[2, c("politybefore","polityafter")]
+```
+
+
+```{r, echo=F, fig.width=3, fig.height=2}
+leaders %>%
+  ggplot(aes(x = politybefore, y = polityafter)) +
+  geom_point(shape = 21, alpha=0) +
+  geom_point(data = subset(leaders[1, c("politybefore","polityafter")]), aes(x = politybefore, y = polityafter), shape = 21) +
+  geom_point(data = subset(leaders[2, c("politybefore","polityafter")]), aes(x = politybefore, y = polityafter), shape = 21) +
+  labs(title = "Democracy before/after assasination attempts",
+       x = "Democracy Level (Before)",
+       y = "Democracy Level (After)") +
+  theme_bw() +
+  theme(plot.title = element_text(size=8),
+        axis.title.x = element_text(size=7),
+        axis.title.y = element_text(size=7))
+```
+
+---
+
+# Scatterplot
+
+```{r, echo=T}
+leaders[3, c("politybefore","polityafter")]
+```
+
+
+```{r, echo=F, fig.width=3, fig.height=2}
+leaders %>%
+  ggplot(aes(x = politybefore, y = polityafter)) +
+  geom_point(shape = 21, alpha=0) +
+  geom_point(data = subset(leaders[1, c("politybefore","polityafter")]), aes(x = politybefore, y = polityafter), shape = 21) +
+  geom_point(data = subset(leaders[2, c("politybefore","polityafter")]), aes(x = politybefore, y = polityafter), shape = 21) +
+   geom_point(data = subset(leaders[3, c("politybefore","polityafter")]), aes(x = politybefore, y = polityafter), shape = 21) +
+  labs(title = "Democracy before/after assasination attempts",
+       x = "Democracy Level (Before)",
+       y = "Democracy Level (After)") +
+  theme_bw() +
+  theme(plot.title = element_text(size=8),
+        axis.title.x = element_text(size=7),
+        axis.title.y = element_text(size=7))
+```
+
+
+---
+
+# Scatterplot
+
+```{r, echo=T}
+leaders[3, c("politybefore","polityafter")]
+```
+
+
+```{r, echo=F, fig.width=3, fig.height=2}
+leaders %>%
+  ggplot(aes(x = politybefore, y = polityafter)) +
+  geom_point(shape = 21) +
+  labs(title = "Democracy before/after assasination attempts",
+       x = "Democracy Level (Before)",
+       y = "Democracy Level (After)") +
+  theme_bw() +
+  theme(plot.title = element_text(size=8),
+        axis.title.x = element_text(size=7),
+        axis.title.y = element_text(size=7))
+```
+
+---
+
+# How big is big?
+
+  - Would be nice to have a standard summary of how similar variabls are
+    - Problem: variables on different scales!
+    - Needs a way to put any variable on common units
+    
+  - **z-score** to the rescue!
+  
+  $$
+  \text{z-score of } x_i = \frac{x_i - \text{mean of } x}{\text{standard deviation of }x}
+  $$
+  
+  - Crucial property: z-scores don't depend on units
+  
+  $$
+  \text{z-score of } (ax_i + b) = \text{z-score of } x_i
+  $$
+  
+---
+
+# Correlation
+
+  - How do variables move together on average?
+  - When $x_i$ is big, what is $y_i$ likely to be?
+    - Positive correlation: when $x_i$ is big, $y_i$ is also big
+    - Negative correlation: when $x_i$ is big, $y_i$ is small
+    - High magnitude of correlation: data cluster tightly around a line
+    
+  - The technical definition of the **correlation coefficient**:
+  
+  $$
+  \frac{1}{n-1} \sum_{i=1}^{n}{\left[ (\text{z-score for }x_i)\times(\text{z-score for }y_i) \right]}
+  $$
+  
+---
+
+# Correlation intuition:
+
+\begin{center}
+\includegraphics[width=.75\textwidth]{figs/corr1.png}
+\end{center}
+
+  - Large values of $X$ tend to occur with large values of $Y$
+    - (z-score for $x_i$) $\times$ (z-score for $y_1$) = (pos. num.) $\times$ (pos. num.) $= +$
+  - Small values of $X$ tend to occur with small values of $Y$  
+    - (z-score for $x_i$) $\times$ (z-score for $y_1$) = (neg. num.) $\times$ (neg. num.) $= +$
+  - If these dominate $\rightsquigarrow$ positive correlation
+  
+---
+
+# Properties of correlation coefficient
+
+  - Correlation measures **linear** association.
+  - Interpretation:
+    - Correlation is between -1 and 1
+    - Correlation of 0 means no linear association
+    - Positive correlations $\rightsquigarrow$ positive associations
+    - Negative correlations $\rightsquigarrow$ negative associations
+    - Closer to -1 or 1 means stronger association
+  - Order doesn't matter: `cor`(x,y) = `cor`(y,x)
+  - Not affected by changes of scale:
+    - `cor`(x,y) = `cor`(ax+b, cy+d)
+    - Celsius vs. Fahrenheit; dollars vs. pesos; cm vs. in.
+    
+---
+
+# Correlation in R
+
+  - Use the `cor()` function
+  - Missing values: set UPDATE!!!
+  -Very highly correlated!
+  
