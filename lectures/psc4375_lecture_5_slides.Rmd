@@ -145,6 +145,7 @@ vignettes %>%
 # How to create histograms?
 
   - How to create a histogram by hand: \pause
+    
     1. create bins along the variable of interest \pause
     2. count number of observations in each bin \pause
     3. **density** = bin height 
@@ -156,14 +157,11 @@ vignettes %>%
   
   - The areas of the bins $=$ proportion of observations in those bins.  \pause
     - $\rightsquigarrow$ area of the blocks sum to 1 (100%)  \pause
-    - Can lead to confusion: height of block can go above 1!  \pause
     - With equal-width bins, height is proportional to proportion in bin.
     
 ---
 
-# Histograms in R
-
-  - In ggplot, we use `geom_histogram()`:
+# Histograms in R (`geom_histogram()`)
 
 ```{r, echo=T, fig.show='hide'}
 vignettes %>%
@@ -179,9 +177,8 @@ vignettes %>%
   theme_bw()
 ```
 
-  - Other arguments:
-    -`labs` sets the titles for the plot (used `xlab` and `ylab` in previous plot)
-    -`scale_x_continuous` sets the scale for the x-axis
+  -`labs` sets the titles for the plot (used `xlab` and `ylab` in previous plot)
+  -`scale_x_continuous` sets the scale for the x-axis
     
     
 ---
