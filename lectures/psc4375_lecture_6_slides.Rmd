@@ -33,12 +33,12 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 
 # Civilian attitudes and war against insurgency
 
-  - War in Afghanistan: counter-insurgency war
+  - War in Afghanistan: counter-insurgency war \pause 
     - Military against insurgents
     - Key to victory: winning hearts and minds of civilians
-    - Aid provision, information campaign, minimizing civilian casualties
+    - Aid provision, information campaign, minimizing civilian casualties \pause 
     
-  - How does exposure to violence affect support for Taliban coalition?
+  - How does exposure to violence affect support for Taliban coalition? \pause 
 
 \begin{center}
 \includegraphics[width=.5\textwidth]{figs/afghan_map.png}
@@ -47,6 +47,7 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 
 # Afghan study
 
+\footnotesize
 ```{r}
 library(tidyverse)
 data(afghan, package = "qss")
@@ -57,12 +58,13 @@ head(afghan[,1:8])
 
 # Missing data
 
-  - **Nonresponse**: respondent can't or won't answer question
-    -Sensitive questions $\rightsquigarrow$ **social desirability bias**
-    -Some countries lack official statistics like unemployment
-    - Leads to missing data
+  - **Nonresponse**: respondent can't or won't answer question \pause 
+  
+    - Sensitive questions $\rightsquigarrow$ **social desirability bias** \pause 
+    - Some countries lack official statistics like unemployment \pause 
+    - Leads to missing data \pause 
     
-  - Missing data in R: a special value `{\color{green}NA}`
+  - Missing data in R: a special value `NA`
   - Causes problems with calculating statistics:
   
 ```{r}
@@ -73,27 +75,33 @@ mean(afghan$violent.exp.ISAF)
     
 ---
 
-# Handling missing data in R (UPDATE TIDY)
+# Handling missing data in R
 
-  - Adding `na.rm = TRUE` to some functions removes missing data
+  - Adding `na.rm = TRUE` to some functions removes missing data 
+
 
 ```{r}
 afghan %>% summarize(mean(violent.exp.ISAF, na.rm = TRUE))
 ```
+\pause 
 
-  - Or, you can explicitly remove missing values using `na.omit()` function:
+  - Or, you can remove missing values using `na.omit()` function:
   
 ```{r}
 afghan %>% summarize(mean(na.omit(violent.exp.ISAF)))
 ```
-  
+
+---
+
+# Handling missing data in R
+
   - See number of `NA`s with `count()` + `group_by()`
-  
+
+
 ```{r}
 afghan %>%
   group_by(violent.exp.ISAF) %>%
   count()
-summary(afghan$violent.exp.ISAF)
 ```
   
 ---
@@ -105,16 +113,21 @@ summary(afghan$violent.exp.ISAF)
 ```{r}
 afghan %>%
   summarize(sum(!is.na(violent.exp.ISAF)))
+```
+
+\pause 
+
+```{r}
 afghan %>%
   summarize(mean(violent.exp.ISAF,na.rm=TRUE))
 ```
-
 ---
 
 # Available-case vs. complete-case analysis
 
   - **Complete-case analysis**: only use units that have data on all variables 
-    - Also called **listwise deletion**
+  
+    - Also called **listwise deletion** \pause
     
 ```{r}
 dim(na.omit(afghan))
@@ -127,14 +140,23 @@ afghan %>%
 
 # Non-response and other biases
 
-  - Nonresponse can create bias
-  - More violent areas $\rightsquigarrow$ more non-response:
+  - Nonresponse can create bias \pause 
+  - More violent areas $\rightsquigarrow$ more non-response:  \pause 
   
+\footnotesize  
 ```{r}
 afghan %>%
   group_by(province) %>%
-  summarize(violent.exp.taliban = mean(is.na(violent.exp.taliban)),
-            violent.exp.ISAF = mean(is.na(violent.exp.ISAF)))
+  summarize(
+    violent.exp.taliban = mean(is.na(violent.exp.taliban)),
+    violent.exp.ISAF = mean(is.na(violent.exp.ISAF)))
 ```
 
-  - $\rightsquigarrow$ oversampling citizens with less exposure to violence! 
+\normalsize \pause 
+
+  - $\rightsquigarrow$ oversampling citizens with less exposure to violence!
+
+---
+
+\centering
+![](/Users/rweldziu/Downloads/fa68e3779d01c484994e9580c3a9893b11597ea9446f8d5baf4ad1a800a2f504_1.jpg)
