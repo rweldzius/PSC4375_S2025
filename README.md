@@ -374,6 +374,10 @@ Villanova University makes every reasonable effort to allow members of the commu
 **Readings**:
  * M: QSS 3.1-3.3
 
+**Slides**:
+ * M: [Lecture 5](https://rweldzius.github.io/PSC4375_S2025/lectures/psc4375_lecture_5_slides_handout.pdf)
+ * W: [Lecture 6](https://rweldzius.github.io/PSC4375_S2025/lectures/psc4375_lecture_6_slides_handout.pdf)
+
 **Assignments**:
  * QSS Tutorial 3 due Tuesday (02/04) by 11:59PM ET
  * Problem Set 2 posted
@@ -387,7 +391,12 @@ Villanova University makes every reasonable effort to allow members of the commu
 **Dates**: 02/10 - 02/14 💝
 
 **Readings**:
- * M: QSS 3.4-3.6
+ * M: QSS 3.4-3.7
+
+**Slides**:
+ * M: [Lecture 7](https://rweldzius.github.io/PSC4375_S2025/lectures/psc4375_lecture_7_slides_handout.pdf)
+ * W: [Lecture 8](https://rweldzius.github.io/PSC4375_S2025/lectures/psc4375_lecture_8_slides_handout.pdf)
+ * F: [Lecture 9](https://rweldzius.github.io/PSC4375_S2025/lectures/psc4375_lecture_9_slides_handout.pdf)
 
 **Assignments**:
  * QSS Tutorial 4 due Tuesday (02/11) by 11:59PM ET
