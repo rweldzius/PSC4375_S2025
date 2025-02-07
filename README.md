@@ -289,7 +289,7 @@ Villanova University makes every reasonable effort to allow members of the commu
 | [1](#week-1) | 01/20 | Causality: Randomized Experiments | T: QSS Tutorial 1 |
 | [2](#week-2) | 01/27 | Causality:  Observational Studies | T: QSS Tutorial 2 <br /> F: [PSet 1](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset1.Rmd)  |
 | [3](#week-3) | 02/03 | Measurement: Descriptive Statistics  | T: QSS Tutorial 3  |
-| [4](#week-4) | 02/10 | Measurement: Sampling & Bivariate Statistics | T: QSS Tutorial 4 <br /> F: PSet 2 |
+| [4](#week-4) | 02/10 | Measurement: Sampling & Bivariate Statistics | T: QSS Tutorial 4 <br /> F: [PSet 2](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset2.Rmd) |
 | [5](#week-5) | 02/17 | Prediction: Elections & Regression  | T: QSS Tutorial 5  |
 | [6](#week-6) | 02/24 | Prediction: Interactions & Nonlinearities | T: QSS Tutorial 6 <br /> F: Exam 1 |
 | [7](#week-7) | 03/03 | Spring Break |  |
@@ -380,7 +380,7 @@ Villanova University makes every reasonable effort to allow members of the commu
 
 **Assignments**:
  * QSS Tutorial 3 due Tuesday (02/04) by 11:59PM ET
- * Problem Set 2 posted
+ * [Problem Set 2](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset2.Rmd) posted; due next week
 
 [Back to schedule](#schedule)
 
@@ -400,7 +400,7 @@ Villanova University makes every reasonable effort to allow members of the commu
 
 **Assignments**:
  * QSS Tutorial 4 due Tuesday (02/11) by 11:59PM ET
- * Problem Set 2 due Friday (02/14) by 11:59PM ET
+ * [Problem Set 1](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset1.Rmd) due Friday (02/14) by 11:59PM ET
 
 [Back to schedule](#schedule)
 
