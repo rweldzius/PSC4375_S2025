@@ -33,6 +33,8 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 
 # Effect of assasination attempts 
 
+\pause 
+\footnotesize
 ```{r}
 library(tidyverse)
 data(leaders, package = "qss")
@@ -41,16 +43,20 @@ head(leaders[,1:7])
 
 # Contingency tables
 
-  - With two categorical variables, we can create **contingency tables**
-    - Also known as **cross-tabs**
-    - Rows are the values of one variable, columns the other
-    
+\pause 
+
+  - With two categorical variables, we can create **contingency tables** \pause 
+    - Also known as **cross-tabs** \pause 
+    - Rows are the values of one variable, columns the other \pause 
+
+\small     
 ```{r}
 leaders %>%
   group_by(civilwarbefore,civilwarafter) %>%
   count() %>%
   spread(civilwarafter, n)
 ```
+\normalsize 
 
   - Quick summary how the two variables "go together" 
 
@@ -63,6 +69,21 @@ leaders %>%
   group_by(civilwarbefore,civilwarafter) %>%
   count() %>%
   ungroup() %>%
+  mutate(prop = n/ sum(n)) %>%
+  select(-n) %>%
+  spread(civilwarafter, prop, drop = T)
+```
+
+---
+
+# Cross-tabs with proportions (by row)
+
+```{r}
+leaders %>%
+  group_by(civilwarbefore,civilwarafter) %>%
+  count() %>%
+  ungroup() %>%
+  group_by(civilwarbefore) %>%
   mutate(prop = n/ sum(n)) %>%
   select(-n) %>%
   spread(civilwarafter, prop, drop = T)
@@ -105,6 +126,7 @@ leaders %>%
 
 # Scatterplot
 
+\footnotesize
 ```{r, echo=T}
 leaders[1, c("politybefore","polityafter")]
 ```
@@ -114,6 +136,7 @@ leaders[1, c("politybefore","polityafter")]
 leaders %>%
   ggplot(aes(x = politybefore, y = polityafter)) +
   geom_point(shape = 21, alpha=0) +
+  geom_point(data = leaders[1, ], aes(x = politybefore, y = polityafter), color = "red", shape = 21) +
   labs(title = "Democracy before/after assasination attempts",
        x = "Democracy Level (Before)",
        y = "Democracy Level (After)") +
@@ -127,6 +150,7 @@ leaders %>%
 
 # Scatterplot
 
+\footnotesize
 ```{r, echo=T}
 leaders[2, c("politybefore","polityafter")]
 ```
@@ -136,8 +160,8 @@ leaders[2, c("politybefore","polityafter")]
 leaders %>%
   ggplot(aes(x = politybefore, y = polityafter)) +
   geom_point(shape = 21, alpha=0) +
-  geom_point(data = subset(leaders[1, c("politybefore","polityafter")]), aes(x = politybefore, y = polityafter), shape = 21) +
-  geom_point(data = subset(leaders[2, c("politybefore","polityafter")]), aes(x = politybefore, y = polityafter), shape = 21) +
+  geom_point(data = leaders[1, ], aes(x = politybefore, y = polityafter), shape = 21) +
+    geom_point(data = leaders[2, ], aes(x = politybefore, y = polityafter), color = "red", shape = 21) +
   labs(title = "Democracy before/after assasination attempts",
        x = "Democracy Level (Before)",
        y = "Democracy Level (After)") +
@@ -151,6 +175,7 @@ leaders %>%
 
 # Scatterplot
 
+\footnotesize
 ```{r, echo=T}
 leaders[3, c("politybefore","polityafter")]
 ```
@@ -160,9 +185,9 @@ leaders[3, c("politybefore","polityafter")]
 leaders %>%
   ggplot(aes(x = politybefore, y = polityafter)) +
   geom_point(shape = 21, alpha=0) +
-  geom_point(data = subset(leaders[1, c("politybefore","polityafter")]), aes(x = politybefore, y = polityafter), shape = 21) +
-  geom_point(data = subset(leaders[2, c("politybefore","polityafter")]), aes(x = politybefore, y = polityafter), shape = 21) +
-   geom_point(data = subset(leaders[3, c("politybefore","polityafter")]), aes(x = politybefore, y = polityafter), shape = 21) +
+  geom_point(data = leaders[1, ], aes(x = politybefore, y = polityafter), shape = 21) +
+  geom_point(data = leaders[2, ], aes(x = politybefore, y = polityafter), shape = 21) +
+  geom_point(data = leaders[3, ], aes(x = politybefore, y = polityafter), color = "red", shape = 21) +
   labs(title = "Democracy before/after assasination attempts",
        x = "Democracy Level (Before)",
        y = "Democracy Level (After)") +
@@ -199,17 +224,19 @@ leaders %>%
 
 # How big is big?
 
-  - Would be nice to have a standard summary of how similar variabls are
-    - Problem: variables on different scales!
-    - Needs a way to put any variable on common units
+\pause 
+  - Would be nice to have a standard summary of how similar variabls are \pause
+    - Problem: variables on different scales! \pause
+    - Needs a way to put any variable on common units \pause
     
-  - **z-score** to the rescue!
+  - **z-score** to the rescue! \pause
   
   $$
   \text{z-score of } x_i = \frac{x_i - \text{mean of } x}{\text{standard deviation of }x}
   $$
-  
-  - Crucial property: z-scores don't depend on units
+ \pause
+ 
+  - Crucial property: z-scores don't depend on units \pause
   
   $$
   \text{z-score of } (ax_i + b) = \text{z-score of } x_i
@@ -218,14 +245,15 @@ leaders %>%
 ---
 
 # Correlation
-
-  - How do variables move together on average?
-  - When $x_i$ is big, what is $y_i$ likely to be?
-    - Positive correlation: when $x_i$ is big, $y_i$ is also big
-    - Negative correlation: when $x_i$ is big, $y_i$ is small
-    - High magnitude of correlation: data cluster tightly around a line
+ \pause
+ 
+  - How do variables move together on average? \pause
+  - When $x_i$ is big, what is $y_i$ likely to be? \pause
+    - Positive correlation: when $x_i$ is big, $y_i$ is also big \pause
+    - Negative correlation: when $x_i$ is big, $y_i$ is small \pause
+    - High magnitude of correlation: data cluster tightly around a line \pause
     
-  - The technical definition of the **correlation coefficient**:
+  - The technical definition of the **correlation coefficient**: \pause
   
   $$
   \frac{1}{n-1} \sum_{i=1}^{n}{\left[ (\text{z-score for }x_i)\times(\text{z-score for }y_i) \right]}
@@ -235,29 +263,34 @@ leaders %>%
 
 # Correlation intuition:
 
+\pause
+ 
 \begin{center}
 \includegraphics[width=.75\textwidth]{figs/corr1.png}
 \end{center}
-
-  - Large values of $X$ tend to occur with large values of $Y$
-    - (z-score for $x_i$) $\times$ (z-score for $y_1$) = (pos. num.) $\times$ (pos. num.) $= +$
-  - Small values of $X$ tend to occur with small values of $Y$  
-    - (z-score for $x_i$) $\times$ (z-score for $y_1$) = (neg. num.) $\times$ (neg. num.) $= +$
+ \pause
+ 
+  - Large values of $X$ tend to occur with large values of $Y$ \pause
+    - (z-score for $x_i$) $\times$ (z-score for $y_1$) = (pos. num.) $\times$ (pos. num.) $= +$ \pause
+  - Small values of $X$ tend to occur with small values of $Y$   \pause
+    - (z-score for $x_i$) $\times$ (z-score for $y_1$) = (neg. num.) $\times$ (neg. num.) $= +$ \pause
   - If these dominate $\rightsquigarrow$ positive correlation
   
 ---
 
 # Properties of correlation coefficient
 
-  - Correlation measures **linear** association.
-  - Interpretation:
-    - Correlation is between -1 and 1
-    - Correlation of 0 means no linear association
-    - Positive correlations $\rightsquigarrow$ positive associations
-    - Negative correlations $\rightsquigarrow$ negative associations
-    - Closer to -1 or 1 means stronger association
-  - Order doesn't matter: `cor`(x,y) = `cor`(y,x)
-  - Not affected by changes of scale:
+ \pause
+ 
+  - Correlation measures **linear** association. \pause
+  - Interpretation: \pause
+    - Correlation is between -1 and 1 \pause
+    - Correlation of 0 means no linear association \pause
+    - Positive correlations $\rightsquigarrow$ positive associations \pause
+    - Negative correlations $\rightsquigarrow$ negative associations \pause
+    - Closer to -1 or 1 means stronger association \pause
+  - Order doesn't matter: `cor`(x,y) = `cor`(y,x) \pause
+  - Not affected by changes of scale: \pause
     - `cor`(x,y) = `cor`(ax+b, cy+d)
     - Celsius vs. Fahrenheit; dollars vs. pesos; cm vs. in.
     
