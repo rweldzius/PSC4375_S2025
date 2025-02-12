@@ -1,5 +1,5 @@
 ---
-title: "Problem Set 1"
+title: "Problem Set 2"
 subtitle: "Sources of Empathy in the Circuit Courts"
 author: "[YOUR NAME]"
 institute: "Villanova University"
@@ -132,7 +132,7 @@ Given that the number of children might be a confounder for the relationship bet
   - Create one subset of the data called `girls_123` that restricts to judges with one, two or three children and have at least one girl.
   - Create another subset of the data called `nogirls_123` that restricts to judges with one, two or three children and have no girls.
   - Calculate the mean of `progressive_vote` within levels of the numbers of kids (`num_kids`) for each of these subsets and save these vectors as `girls_vote_by_nkids` and `nogirls_vote_by_nkids.`
-  - Use these two vectors to estimate the average treatment effect within levels, saving this vector as `ate_nkids`.
+  - Use `inner_join` to combine the two data subsets then estimate the average treatment effect within levels, saving this vector as `ate_nkids`.
 
 Are these estimated effects largely similar or largely different than what you found using all of the data? What assumption do you need to make to interpret these effects causally? Do you think it is plausible in this case?
 

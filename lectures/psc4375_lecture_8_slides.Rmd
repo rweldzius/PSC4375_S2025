@@ -41,6 +41,60 @@ data(leaders, package = "qss")
 head(leaders[,1:7])
 ```
 
+
+# Before we begin with lesson, Pset 2 help
+
+```{r,  fig.show='hide'}
+PolityAfter <- leaders %>%
+  group_by(civilwarbefore) %>%
+  summarize(polityafter_mean = mean(polityafter))
+
+PolityAfterPlot <- PolityAfter %>%
+  ggplot(aes(x=as.factor(civilwarbefore), y = polityafter_mean)) +
+  geom_bar(stat = "identity", alpha=0.75) +
+  scale_x_discrete(labels = c("No civil war","Civil war")) +
+  labs(title = "Dem. score after assasin. attempt",
+       y = "Average Democracy Score", x = "") +
+  theme_bw()
+
+```
+
+# Before we begin with lesson, Pset 2 help
+
+```{r,fig.width=3.8, fig.height=2.8}
+PolityAfterPlot
+```
+
+# More Pset 2 help!
+
+Question 5 update:
+
+ - Given that the number of children might be a confounder for the relationship between number of girls and voting, let’s estimate the effects using statistical control for the number of children using the following steps:
+
+    - Create one subset of the data called `girls_123` that restricts to judges with one, two or three children and have at least one girl.
+    - Create another subset of the data called `nogirls_123` that restricts to judges with one, two or three children and have no girls.
+    - Calculate the mean of `progressive_vote` within levels of the numbers of kids (`num_kids`) for each of these subsets and save these vectors as `girls_vote_by_nkids` and `nogirls_vote_by_nkids.`
+    - Use `inner_join` to combine the two data subsets then estimate the average treatment effect within levels, saving this vector as `ate_nkids`.
+
+# More Pset 2 help!
+
+  - Use `inner_join` to combine the two data subsets...
+
+\small 
+```{r}
+PolityAfter <- leaders %>%
+  group_by(civilwarbefore) %>%
+  summarize(polityafter_mean = mean(polityafter))
+
+PolityBefore <- leaders %>%
+  group_by(civilwarbefore) %>%
+  summarize(politybefore_mean = mean(politybefore))
+
+PolityCombine <- inner_join(PolityAfter,PolityBefore)
+PolityCombine
+```
+
+
 # Contingency tables
 
 \pause 
@@ -262,20 +316,43 @@ leaders %>%
 ---
 
 # Correlation intuition:
-
-\pause
  
 \begin{center}
 \includegraphics[width=.75\textwidth]{figs/corr1.png}
 \end{center}
- \pause
+
+---
+
+# Correlation intuition:
+
  
+\begin{center}
+\includegraphics[width=.75\textwidth]{figs/corr2.png}
+\end{center}
+\pause
+
   - Large values of $X$ tend to occur with large values of $Y$ \pause
     - (z-score for $x_i$) $\times$ (z-score for $y_1$) = (pos. num.) $\times$ (pos. num.) $= +$ \pause
   - Small values of $X$ tend to occur with small values of $Y$   \pause
     - (z-score for $x_i$) $\times$ (z-score for $y_1$) = (neg. num.) $\times$ (neg. num.) $= +$ \pause
   - If these dominate $\rightsquigarrow$ positive correlation
   
+---
+
+# Correlation intuition:
+
+ 
+\begin{center}
+\includegraphics[width=.75\textwidth]{figs/corr3.png}
+\end{center}
+\pause
+
+  - Large values of $X$ tend to occur with small values of $Y$ \pause
+    - (z-score for $x_i$) $\times$ (z-score for $y_1$) = (pos. num.) $\times$ (neg. num.) $= -$ \pause
+  - Small values of $X$ tend to occur with large values of $Y$   \pause
+    - (z-score for $x_i$) $\times$ (z-score for $y_1$) = (neg. num.) $\times$ (pos. num.) $= -$ \pause
+  - If these dominate $\rightsquigarrow$ negative correlation  
+    
 ---
 
 # Properties of correlation coefficient
@@ -299,6 +376,14 @@ leaders %>%
 # Correlation in R
 
   - Use the `cor()` function
-  - Missing values: set UPDATE!!!
+  - Missing values: set the `use = "pairwise"` $\rightsquigarrow$ available case analysis
+  
+```{r}
+leaders %>%
+  select(politybefore, polityafter) %>%
+  cor()
+```
+  
+  
   -Very highly correlated!
   
