@@ -9,6 +9,7 @@ output:
     theme: "CambridgeUS"
     colortheme: "seahorse"
     fonttheme: "structurebold"
+classoption: "handout"    
 ---
 
 ```{css,echo = F}
@@ -173,6 +174,7 @@ quantiles %>%
 
 # QQ-plot example (setup)
 
+\small 
 ```{r, echo=T, results='hide'}
 ## calculate change in polity
 leaders <- leaders %>%
@@ -196,6 +198,7 @@ quantiles <- leaders %>%
 
 # QQ-plot example (plot)
 
+\small 
 ```{r, echo=T, fig.show='hide'}
 quantiles %>%
   ggplot(aes(x = `0`, y = `1`)) + 
