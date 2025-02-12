@@ -256,6 +256,7 @@ leaders %>%
 
 # Scatterplot
 
+\footnotesize
 ```{r, echo=T}
 leaders[3, c("politybefore","polityafter")]
 ```
@@ -279,7 +280,7 @@ leaders %>%
 # How big is big?
 
 \pause 
-  - Would be nice to have a standard summary of how similar variabls are \pause
+  - Would be nice to have a standard summary of how similar variables are \pause
     - Problem: variables on different scales! \pause
     - Needs a way to put any variable on common units \pause
     
@@ -375,8 +376,7 @@ leaders %>%
 
 # Correlation in R
 
-  - Use the `cor()` function
-  - Missing values: set the `use = "pairwise"` $\rightsquigarrow$ available case analysis
+  - Use the `cor()` function \pause 
   
 ```{r}
 leaders %>%

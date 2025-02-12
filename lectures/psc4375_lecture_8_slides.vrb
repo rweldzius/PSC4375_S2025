@@ -3,10 +3,7 @@
 \begin{itemize}
 \tightlist
 \item
-  Use the \texttt{cor()} function
-\item
-  Missing values: set the \texttt{use\ =\ "pairwise"}
-  \(\rightsquigarrow\) available case analysis
+  Use the \texttt{cor()} function \pause
 \end{itemize}
 
 \begin{Shaded}
