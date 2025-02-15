@@ -423,10 +423,11 @@ Villanova University makes every reasonable effort to allow members of the commu
 
 **Topic**: Prediction: More Regression!
 
-**Dates**: 02/24 - 02/28
+**Dates**: 02/24 - 02/28 (**No class meeting on Friday**)
 
 **Readings**:
  * M: QSS 4.2.4 - 4.2.6
+ * F: NO CLASS
 
 **Assignments**:
  * No tutorial this week! Woo!
