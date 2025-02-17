@@ -384,6 +384,5 @@ leaders %>%
   cor()
 ```
   
-  
-  -Very highly correlated!
+  - Very highly correlated!
   

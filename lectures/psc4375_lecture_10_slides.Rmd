@@ -1,6 +1,6 @@
 ---
-title: "PSC4375: Loops & Predicting"
-subtitle: "Week 5: Lecture 10"
+title: "PSC4375: Linear Regression"
+subtitle: "Week 5: Lecture 10 (& 11)"
 author: "Prof. Weldzius"
 institute: "Villanova University"
 date: "Slides Updated: `r Sys.Date()`"
@@ -31,182 +31,325 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 })
 ```
 
-# 2016 US Presidential Election
+# Can betting markets help us predict elections?
 
-  \begin{center}
-  \includegraphics[width=.5\textwidth]{figs/2016election.png}
-  \end{center}
+\pause
+
+  - Data from an online betting company Intrade \pause
+  - People trade contracts such as ``Obama to win the electoral votes in Florida'' \pause
+  - Market prices of each contract fluctuate based on its sales \pause
+  - Why might we expect betting markets like Intrade to accurately predict outcomes of elections? 
+
+---
+
+# Linear Regression: Prediction using bivariate relationships
+
+\pause
+
+  - Goal: what’s our best guess about $Y_i$ if we know what $X_i$ is? \pause
+    - What’s our best guess about election margins if we know the market's margins? \pause
+  - Terminology:
+    - **Dependent/outcome variable**: what we want to predict (election margin). \pause
+    - **Independent/explanatory variable**: what we’re using to predict (market margin).
+
+---
+
+# We'll use two datasets: `intrade08.csv` & `pres08.csv`
+
+\footnotesize
+
+--------------------------------------------------------------------------------
+ Name                Description
+ ------------------- -----------------------------------------------------------
+ `day`               Date of the session 
+ 
+ `statename`         Full name of each state (including DC in 2008) 
+ 
+ `state`             Abbreviation of each state (including DC in 2008)
+ 
+ `PriceD`            Closing price (predicted vote share) of Democratic Nominee's market
+ 
+ `PriceR`            Closing price (predicted vote share) of Republican Nominee's market 
+ 
+ `VolumeD`           Total session trades of Democratic Party Nominee's market
+ 
+ `VolumeR`           Total session trades of Republican Party Nominee's market 
+--------------------------------------------------------------------------------
+
+  - `intrade08.csv`: Each row represents daily trading information about the contracts for either the Democratic or Republican Party nominee's victory in a particular state. 
+
+---
+
+# Presidential voting data from 2008
+
+--------------------------------------------------------------------------------
+ Name                 Description
+ -------------------- ----------------------------------------------------------
+ `state.name`         Full name of state (only in `pres2008`)
+ 
+ `state`              Two letter state abbreviation
+ 
+ `Obama`              Vote percentage for Obama
+ 
+ `McCain`             Vote percentage for McCain
+ 
+ `EV`                 Number of electoral college votes for this state
+--------------------------------------------------------------------------------
+
+---
+
+# Predicting Elections Using Betting Markets and Linear Models
+
+ \pause
+ 
+  - Load the data
   
-  - 2016 election popular vote:
-    -Clinton: 65,853,516 (48.2%)
-    - Trump: 62,984,825 (46.1%)
-  - Why did Trump win? **Electoral college**  
-    - Trump: 304, Clinton: 227
-  - Election determined by 77,744 votes (margins in WI, MI, PA)
-    - 0.056% of the electorate (~136million)
+```{r, echo=FALSE}
+setwd("~/Library/CloudStorage/Dropbox/Villanova/TEACHING/PSC4375 - QSS/PSC4375_S2025/PSC4375_S2025/lectures")
+```
+  
+  
+```{r}
+library(tidyverse)
+intrade08 <- read.csv("../data/intrade08.csv")
+pres08 <- read.csv("../data/pres08.csv")
+
+## merge datasets and calculate margins for DV and IV
+intresults08 <- inner_join(intrade08,pres08) %>%
+  mutate(obama.intmarg = PriceD - PriceR,
+         obama.actmarg = Obama - McCain)
+```
+
+---
+
+# Plot bivariate relationship
+  
+```{r, echo=FALSE, fig.width=4, fig.height=3}
+intresults08 %>%
+  group_by(state) %>%
+  summarize(obama.intmarg = mean(obama.intmarg),
+            obama.actmarg = mean(obama.actmarg)) %>%
+  ggplot(aes(x=obama.intmarg,y=obama.actmarg)) +
+  geom_point(shape = 21) + 
+  # geom_smooth(method='lm') +
+  labs(x = "Market's margin for Obama",
+       y = "Obama margin") +
+  theme_bw()
+```
+  
+---
+
+# Using a line to predict
+
+ \pause
+ 
+  - Prediction: for any value of $X$ , what’s the best guess about $Y$?  \pause
+    - Need a function $y = f(x)$ that maps values of $X$ into predictions. \pause
+    - **Machine learning**: fancy ways to determine $f(x)$ \pause
+  - Simplest possible way to relate two variables: a line. \pause
+
+$$  
+y = mx + b
+$$
+
+ \pause
+ 
+  - Problem: for any line we draw, not all the data is on the line. \pause
+    - Some points will be above the line, some below. \pause
+    - Need a way to account for **chance variation** away from the line.
     
 ---
 
-# Predicting US Presidential Elections
+# Linear Regression Model
 
-  - **Electoral college system**
-    - Must win an absolute majority of 538 electoral votes
-    - 538 = 435 (House of Representatives) + 100 (Senators) + 3 (DC)
-    - Must win at least 270 votes
-    - nobody wins an absolute majority $\rightsquigarrow$ House vote
-  - Must predict winner of each state
+  - Model for the line of best fit
   
-  \begin{center}
-  \includegraphics[width=.6\textwidth]{figs/2016electcol.png}
-  \end{center}  
+$$
+Y_i = \underbrace{\alpha}_{\textrm{intercept}} + \underbrace{\beta}_{\textrm{slope}} \times X_i + \underbrace{\epsilon_i}_{\textrm{error term}}
+$$
+ \pause
+ 
+  - **Coefficients/parameters** $(\alpha,\beta)$: true unknown intercept/slope of the line of best fit \pause
+  - **Chance error** $(\epsilon_i)$: accounts for the fact that the line doesn't perfectly fit the data. \pause
+    - Each observation allowed to be off the regression line
+    - Chance errors are 0 on average \pause
+  - Useful fiction: this model represents the **data generating process*
+    - George Box: "all models are wrong, some are useful" 
+    
+---
+
+# Interpretting the Regression Line
+
+$$
+Y_i = \alpha + \beta \times X_i + \epsilon_i
+$$
+
+ \pause
+ 
+  - **Intercept** $alpha$: average value of $Y$ when $X$ is 0 
+    - Average Obama margin when market's margin is 0. \pause
+  - **Slope** $\beta$: average change in $Y$ when $X$ increases by one unit
+    - Average increase in Obama margin for each additional margin increase by the market.  \pause
+  - But we don't know $\alpha$ or $\beta$. How can we estimate them? Next time...  \pause
+    - Or now if we still have time!
+    
+---
+
+# Linear Regression Model (skip if same day)
+
+  - Model for the line of best fit
+  
+$$
+Y_i = \underbrace{\alpha}_{\textrm{intercept}} + \underbrace{\beta}_{\textrm{slope}} \times X_i + \underbrace{\epsilon_i}_{\textrm{error term}}
+$$
+
+  - **Coefficients/parameters** $(\alpha,\beta)$: true unknown intercept/slope of the line of best fit
+  - **Chance error** $(\epsilon_i)$: accounts for the fact that the line doesn't perfectly fit the data.
+    - Each observation allowed to be off the regression line
+    - Chance errors are 0 on average
+  
+---
+
+# Estimate coefficients
+
+ \pause
+ 
+  - Parameters: $\alpha, \beta$ 
+    - Unknown features of the data-generating process.
+    - Chance error makes these impossible to observe directly. \pause
+  - Estimates: $\hat{\alpha}, \hat{\beta}$
+    - An estimate is our best guess about some parameter. \pause
+  - Regression line:
+
+$$
+\hat{Y} = \hat{\alpha} + \hat{\beta} \times x
+$$
+  - Average value of $Y$ when $X$ is $x$
+  - Represents the best guess or **predicted value** of the outcome at $x$.  
+    
+---
+
+# Line of best fit
+
+```{r, echo=FALSE, fig.width=4, fig.height=3}
+intresults08 %>%
+    group_by(state) %>%
+  summarize(obama.intmarg = mean(obama.intmarg),
+            obama.actmarg = mean(obama.actmarg)) %>%
+  ggplot(aes(x=obama.intmarg,y=obama.actmarg)) +
+  geom_point(shape = 21) + 
+  geom_smooth(method='lm', color="red", se=F) +
+  labs(x = "Market's margin for Obama",
+       y = "Obama margin") +
+  theme_bw()
+```
 
 ---
 
-# Prediction strategy
+# Why not this line?
 
-  - Predict state-level support for each candidate using polls
-  - Allocate electoral college votes of that state to its predicted winner
-  - Aggregate EC votes across states to determine the predicted winner
-  - Coding strategy:
-    1. For each state, subset to polls within that state
-    2. Further subset the latest polls
-    3. Average the lates polls to estimate support for each candidate
-    4. Allocate the electoral votes to the candidate who has greatest support
-    5. Repeat this for all states and aggregate the electoral votes
-  - Sounds like a lot of subsets, ugh...
+```{r, echo=FALSE, fig.width=4, fig.height=3}
+intresults08 %>%
+    group_by(state) %>%
+  summarize(obama.intmarg = mean(obama.intmarg),
+            obama.actmarg = mean(obama.actmarg)) %>%
+  ggplot(aes(x=obama.intmarg,y=obama.actmarg)) +
+  geom_point(shape = 21) + 
+  geom_abline(intercept = -15, slope = 1, color="blue") +
+  labs(x = "Market's margin for Obama",
+       y = "Obama margin") +
+  theme_bw()
+```
+
+---
+
+# Least squares
+
+ \pause
+ 
+  - How do we figure out the best line to draw? \pause
+    - **Fitted/predicted value** for each observation: $\hat{Y} = \hat{\alpha} + \hat{beta} \times X_i$ \pause
+    - **Residual/prediction error**: $\hat{\epsilon_i} = Y_i - \hat{Y}$ \pause
+    
+  - Get these estimates by the **least squares method** \pause
+  - Minimize the **sum of the squared residuals** (SSR): \pause
+  
+$$
+SSR = \sum_{i=1}^{n} \hat{\epsilon}_i^2 = \sum_{i=1}^n (Y_i - \hat{\alpha} - \hat{\beta}X_i)^2
+$$
+
+ \pause
+ 
+  - Finds the line that minimizes the magnitude of the prediction errors!
   
 ---
 
-# Multiplication
+# Linear Regression in R
 
-- Let's create a new variable that multiples each value in a vector by 2:
-  - Easy in R: `values * 2`
-  - Pretend you didn't know this approach
+ \pause
+ 
+  - R will calculate least squares line for a data set using `lm()` \pause
+    - Syntax: `lm(y ~ x, data = mydata)` \pause
+    - `y` is the name of the dependent variable
+    - `x` is the name of the independent variable
+    - `mydata` is the data.frame where they live
+
+---     
+
+# Linear Regression in R
+
+```{r, warning=FALSE}
+fit <- lm(obama.actmarg ~ obama.intmarg, data = intresults08)
+fit
+```
+
+---
+
+# Coefficients and fitted values
+
+  - Use `coef()` to extrac estimated coefficients:
+
+```{r}
+coef(fit)
+```
+
+  - R can show you each of the fitted values as well:
   
 ```{r}
-values <- c(2,4,6)
-
-## number of values
-n <- length(values)
-
-## create container to hold results
-results <- rep(NA, times = n)
-
-## multiply each value by 2
-results[1] <- values[1] * 2
-results[2] <- values[2] * 2
-results[3] <- values[3] * 2
-
-## print results
-results
+head(fitted(fit))
 ```
 
 ---
 
-# Loops in R
+# Properties of leasat squares
 
-  - What if you had more values? Not efficient!
-    - **for loop**: a way to iteratively execute the same code multiple times.
-  - Basic structure:
+  - Least squares line always goes through $(\bar{X},\bar{Y})$
+  - Estimated slope is related to correlation:
   
-```{r, echo=T, error=FALSE}
-for (i in X) {
-  expression1
-  expression2
-  ...
-  expression3
-}
-```
+$$
+\hat{\beta} = (\textrm{correlation of } X \textrm{and } Y) \times \frac{\textrm{SD of }Y}{\textrm{SD of }X}
+$$
 
-  - Elements of a loop:
-    - `i`: counter (can use any name)
-    - `X`: vector containing a set of ordered values the counter takes
-    - `expression`: a set of expressions that will be repeatedly evaluated.
-    - `{ }`: curly braces to define beginning and end of the loop.
-  - Indentation is important for readability of the code.
+  - Mean of residuals is always 0
   
 ---
 
-# Loop example:
+# Visual components of least squares
 
-```{r}
-values <- c(2,4,6)
-n <- length(values)
-results <- rep(NA, times = n)
-
-## begin loop
-for (i in 1:n) {
-  results[i] <- values[i] * 2
-  ## use cat() to display output
-  cat(values[i], "times 2 is equal to ", results[i],  "\n")
-}
+```{r, echo=FALSE, fig.width=4, fig.height=3}
+intresults08 %>%
+    group_by(state) %>%
+  summarize(obama.intmarg = mean(obama.intmarg),
+            obama.actmarg = mean(obama.actmarg)) %>%
+  ggplot(aes(x=obama.intmarg,y=obama.actmarg)) +
+  geom_point(shape = 21) + 
+  geom_smooth(method='lm', color="red", se=F) +
+  # geom_vline(xintercept=0, linetype="dashed", color="grey") +
+  # geom_segment(aes(x = -25, y = 20, xend = 0, yend = 5.5),
+  #                 arrow = arrow(length = unit(0.5, "cm")),
+  #              color = "blue") +
+  # annotate("text", x= -38, y = 20, label = "intercept", color = "blue") + 
+  labs(x = "Market's margin for Obama",
+       y = "Obama margin") +
+  theme_bw()
 ```
-
----
-
-# 2016 polling prediction
-
-  - Election data: `pres.csv`
-  
-| Name           | Description                                                                               |
-|----------------|:------------------------------------------------------------------------------------------|
-| `state`         |      abbreviated name of state |
-| `state.name` | unabbreviated name of state |
-| `clinton` | Clinton's vote share (percentage) |
-| `trump` | Trump's vote share (percentage) |
-| `ev` | number of electoral college votes for the state | 
-
-  - Polling data `polls16.csv`
-
-|----------------|:------------------------------------------------------------------------------------------|
-| `state`         |      abbreviated name of state in which polls was conducted |
-| `middate` | middate of the period when polls was conducted |
-| `daysleft` | number of days between middate and election day  |
-| `pollster` | name of organization conducting poll |
-| `clinton` | predicted support for Clinton (percentage) |
-| `trump` | predicted support for Trump (percentage)
-
----
-
-# Some preprocessing
-
-```{r}
-data(pres16, package = "qss")
-data(polls16, package = "qss")
-
-## calculate Trump's margin of victory
-polls16 <- polls16 %>%
-  mutate(margin = trump - clinton)
-pres16 <- pres16 %>%
-  mutate(margin = trump - clinton)
-```
-
----
-
-# What does the data look like?
-
-```{r}
-head(polls16)
-```
-
----
-
-# Poll prediction for each state
-
-```{r}
-poll_pred <- rep(NA, 51) # place holder
-
-## get list of unique state names to iterate over
-state_names <- unique(polls16$state)
-
-## add labels to place holder
-names(poll_pred) <- state_names
-
-for (i in 1:51) {
-  poll_pred <- polls16 %>%
-    filter(state == state_names[i]) %>%
-    mutate(latest = daysleft[min(daysleft)])
-}
-```
-
-
