@@ -413,9 +413,14 @@ Villanova University makes every reasonable effort to allow members of the commu
 **Readings**:
  * M: QSS 4.1-4.2.3
 
+**Slides**:
+ * M: [Lecture 9](https://rweldzius.github.io/PSC4375_S2025/lectures/psc4375_lecture_9_slides_handout.pdf)
+ * W: [Lecture 10/11](https://rweldzius.github.io/PSC4375_S2025/lectures/psc4375_lecture_10_slides_handout.pdf)
+ * F: See above. We will start where we left off on Wednesday. 
+
 **Assignments**:
  * QSS Tidyverse Tutorial 5 due Tuesday (02/18) by 11:59PM ET
- * Exam 1 posted
+ * Exam 1 posted on Friday
 
 [Back to schedule](#schedule)
 
