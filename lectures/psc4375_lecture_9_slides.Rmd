@@ -83,17 +83,54 @@ knitr::knit_hooks$set(chunk = function(x, options) {
   
 ---
 
-# Multiplication
+# Multiplication {.t}
 
  \pause
  
   - Let's create a new variable that multiples each value in a vector by 2: \pause
-    - Easy in R: `values * 2`
-    - Pretend you didn't know this approach \pause
+    - Easy in R: `values * 2` \pause
+    - Pretend you didn't know this approach
 
 ```{r, echo=F}
 require(tidyverse)
 ```
+
+---
+
+# Multiplication {.t}
+
+\footnotesize  
+```{r, eval=F}
+values <- c(2,4,6)
+```
+
+
+---
+
+# Multiplication {.t}
+
+\footnotesize  
+```{r, eval=F}
+values <- c(2,4,6)
+
+## number of values
+n <- length(values)
+```
+
+# Multiplication {.t}
+
+\footnotesize  
+```{r, eval=F}
+values <- c(2,4,6)
+
+## number of values
+n <- length(values)
+
+## create container to hold results
+results <- rep(NA, times = n)
+```
+
+# Multiplication {.t}
 
 \footnotesize  
 ```{r}
@@ -113,17 +150,23 @@ results[3] <- values[3] * 2
 
 ---
 
-# Multiplication
-
- \pause
- 
-  - Let's create a new variable that multiples each value in a vector by 2: \pause
-    - Easy in R: `values * 2`
-    - Pretend you didn't know this approach \pause
+# Multiplication {.t}
 
 \footnotesize  
 ```{r}
-## print results
+values <- c(2,4,6)
+
+## number of values
+n <- length(values)
+
+## create container to hold results
+results <- rep(NA, times = n)
+
+## multiply each value by 2
+results[1] <- values[1] * 2
+results[2] <- values[2] * 2
+results[3] <- values[3] * 2
+
 results
 ```
 

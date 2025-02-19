@@ -31,6 +31,14 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 })
 ```
 
+---
+
+# Today: Let's talk about regression
+
+![](figs/fafo.png){#id .class width=60% height=70%}
+
+---
+
 # Can betting markets help us predict elections?
 
 \pause
@@ -57,24 +65,15 @@ knitr::knit_hooks$set(chunk = function(x, options) {
 # We'll use two datasets: `intrade08.csv` & `pres08.csv`
 
 \footnotesize
-
---------------------------------------------------------------------------------
- Name                Description
- ------------------- -----------------------------------------------------------
- `day`               Date of the session 
- 
- `statename`         Full name of each state (including DC in 2008) 
- 
- `state`             Abbreviation of each state (including DC in 2008)
- 
- `PriceD`            Closing price (predicted vote share) of Democratic Nominee's market
- 
- `PriceR`            Closing price (predicted vote share) of Republican Nominee's market 
- 
- `VolumeD`           Total session trades of Democratic Party Nominee's market
- 
- `VolumeR`           Total session trades of Republican Party Nominee's market 
---------------------------------------------------------------------------------
+| Name           | Description |
+|----------------|:------------------------------------------------------------------------------------------|
+| `day` |   Date of the session |
+| `statename` | Full name of each state (including DC in 2008) | 
+| `state` |  Abbreviation of each state (including DC in 2008) |
+| `PriceD` | Closing price (predicted vote share) of Democratic Nominee's market |
+| `PriceR` | Closing price (predicted vote share) of Republican Nominee's market  |
+| `VolumeD` | Total session trades of Democratic Party Nominee's market |
+| `VolumeR` |  Total session trades of Republican Party Nominee's market | 
 
   - `intrade08.csv`: Each row represents daily trading information about the contracts for either the Democratic or Republican Party nominee's victory in a particular state. 
 
@@ -173,7 +172,7 @@ $$
   - **Chance error** $(\epsilon_i)$: accounts for the fact that the line doesn't perfectly fit the data. \pause
     - Each observation allowed to be off the regression line
     - Chance errors are 0 on average \pause
-  - Useful fiction: this model represents the **data generating process*
+  - Useful fiction: this model represents the **data generating process**
     - George Box: "all models are wrong, some are useful" 
     
 ---
@@ -222,8 +221,9 @@ $$
   - Regression line:
 
 $$
-\hat{Y} = \hat{\alpha} + \hat{\beta} \times x
+\hat{Y} = \hat{\alpha} + \hat{\beta} * x
 $$
+
   - Average value of $Y$ when $X$ is $x$
   - Represents the best guess or **predicted value** of the outcome at $x$.  
     
@@ -298,6 +298,7 @@ $$
 
 # Linear Regression in R
 
+\small 
 ```{r, warning=FALSE}
 fit <- lm(obama.actmarg ~ obama.intmarg, data = intresults08)
 fit
@@ -307,7 +308,7 @@ fit
 
 # Coefficients and fitted values
 
-  - Use `coef()` to extrac estimated coefficients:
+  - Use `coef()` to extract estimated coefficients:
 
 ```{r}
 coef(fit)
@@ -321,7 +322,7 @@ head(fitted(fit))
 
 ---
 
-# Properties of leasat squares
+# Properties of least squares
 
   - Least squares line always goes through $(\bar{X},\bar{Y})$
   - Estimated slope is related to correlation:
@@ -344,11 +345,45 @@ intresults08 %>%
   ggplot(aes(x=obama.intmarg,y=obama.actmarg)) +
   geom_point(shape = 21) + 
   geom_smooth(method='lm', color="red", se=F) +
-  # geom_vline(xintercept=0, linetype="dashed", color="grey") +
-  # geom_segment(aes(x = -25, y = 20, xend = 0, yend = 5.5),
-  #                 arrow = arrow(length = unit(0.5, "cm")),
-  #              color = "blue") +
-  # annotate("text", x= -38, y = 20, label = "intercept", color = "blue") + 
+  labs(x = "Market's margin for Obama",
+       y = "Obama margin") +
+  theme_bw()
+```
+
+---
+
+# Visual components of least squares
+
+```{r, echo=FALSE, fig.width=4, fig.height=3}
+intresults08 %>%
+    group_by(state) %>%
+  summarize(obama.intmarg = mean(obama.intmarg),
+            obama.actmarg = mean(obama.actmarg)) %>%
+  ggplot(aes(x=obama.intmarg,y=obama.actmarg)) +
+  geom_point(shape = 21) + 
+  geom_smooth(method='lm', color="red", se=F) +
+  geom_vline(xintercept=mean(intresults08$obama.intmarg), color="navyblue", linewidth=1) +
+  geom_hline(yintercept=mean(intresults08$obama.actmarg), color="navyblue", linewidth=1) +
+  labs(x = "Market's margin for Obama",
+       y = "Obama margin") +
+  theme_bw()
+```
+
+---
+
+# Visual components of least squares
+
+```{r, echo=FALSE, fig.width=4, fig.height=3}
+intresults08 %>%
+    group_by(state) %>%
+  summarize(obama.intmarg = mean(obama.intmarg),
+            obama.actmarg = mean(obama.actmarg)) %>%
+  ggplot(aes(x=obama.intmarg,y=obama.actmarg)) +
+  geom_point(shape = 21) + 
+  geom_smooth(method='lm', color="red", se=F) +
+  geom_vline(xintercept=0, color="orange", linewidth=1, linetype="dashed") +
+  geom_vline(xintercept=mean(intresults08$obama.intmarg), color="navyblue", linewidth=1) +
+  geom_hline(yintercept=mean(intresults08$obama.actmarg), color="navyblue", linewidth=1) +
   labs(x = "Market's margin for Obama",
        y = "Obama margin") +
   theme_bw()
