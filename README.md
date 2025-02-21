@@ -291,7 +291,7 @@ Villanova University makes every reasonable effort to allow members of the commu
 | [3](#week-3) | 02/03 | Measurement: Descriptive Statistics  | T: QSS Tutorial 3  |
 | [4](#week-4) | 02/10 | Measurement: Sampling & Bivariate Statistics | T: QSS Tutorial 4 <br /> F: [PSet 2](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset2.Rmd) |
 | [5](#week-5) | 02/17 | Prediction: Elections & Regression  | T: QSS Tutorial 5  |
-| [6](#week-6) | 02/24 | Prediction: More Regression |  F: Exam 1 |
+| [6](#week-6) | 02/24 | Prediction: More Regression |  F: [Exam 1](https://github.com/rweldzius/PSC4375_S2025/blob/main/exams/psc4375_s25_exam.Rmd) |
 | [7](#week-7) | 03/03 | Spring Break |  |
 | [8](#week-8) | 03/10 | Prediction: Interactions & Nonlinearities  | T: QSS Tutorial 6   <br /> W: Final project proposal|
 | [9](#week-9) | 03/17 | Probability: Basics | T: QSS Tutorial 7 |
@@ -420,7 +420,7 @@ Villanova University makes every reasonable effort to allow members of the commu
 
 **Assignments**:
  * QSS Tidyverse Tutorial 5 due Tuesday (02/18) by 11:59PM ET
- * Exam 1 posted on Friday
+ * [Exam 1](https://github.com/rweldzius/PSC4375_S2025/blob/main/exams/psc4375_s25_exam.Rmd) posted on Friday
 
 [Back to schedule](#schedule)
 
@@ -436,7 +436,7 @@ Villanova University makes every reasonable effort to allow members of the commu
 
 **Assignments**:
  * No tutorial this week! Woo!
- * Exam 1 due Friday (02/28) by 11:59PM ET
+ * [Exam 1](https://github.com/rweldzius/PSC4375_S2025/blob/main/exams/psc4375_s25_exam.Rmd) due Friday (02/28) by 11:59PM ET
 
 [Back to schedule](#schedule)
 
