@@ -114,7 +114,8 @@ midterms %>%
   theme_bw() 
 ```
 
-  - How well do the models "fit the data"?
+\pause 
+  - How well do the models "fit the data"? \pause 
     - How well does the model predict the outcome variable in the data?
     
 ---
@@ -126,10 +127,12 @@ midterms %>%
   - One number summary of model fit: $R^2$ or **coefficient of determination**.\pause
     - Measure of the **proportional reduction in error** by the model.\pause
   - Prediction error compared to what?\pause
-    - Baseline prediction error: **Total sum of squares** TSS $= \sum_{-=1}^{n}(Y-\bar{Y})^2$\pause
-    - Model prediction error: **Sum of squared residuals** SSR $= \sum_{-=1}^{n} \epsilon_i^2$\pause
+    - Baseline prediction error: **Total sum of squares** 
+      - TSS $= \sum_{i=1}^{n}(Y_i-\bar{Y})^2$\pause
+    - Model prediction error: **Sum of squared residuals** 
+      - SSR $= \sum_{i=1}^{n} \epsilon_i^2$\pause
     - TSS - SSR: reduction in prediction error by the model.\pause
-  - $R^2$ is this reduction in error divided by the baseline error: \pause
+  - $R^2$ is this reduction in error divided by the baseline error: \vspace{-3pt}
   
 $$
 R^2 = \frac{\text{TSS} - \text{SSR}}{\text{TSS}}
