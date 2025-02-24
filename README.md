@@ -434,6 +434,9 @@ Villanova University makes every reasonable effort to allow members of the commu
  * M: QSS 4.2.4 - 4.2.6
  * F: NO CLASS
 
+**Slides**:
+ * M/W: [Lecture 12](https://rweldzius.github.io/PSC4375_S2025/lectures/psc4375_lecture_12_slides_handout.pdf)
+
 **Assignments**:
  * No tutorial this week! Woo!
  * [Exam 1](https://github.com/rweldzius/PSC4375_S2025/blob/main/exams/psc4375_s25_exam.Rmd) due Friday (02/28) by 11:59PM ET
