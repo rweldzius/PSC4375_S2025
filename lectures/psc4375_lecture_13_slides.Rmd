@@ -169,7 +169,7 @@ $$
 \begin{tabular}{ r | l  l }
  & Control ($Z_i = 0$) & Neighbors ($Z_i = 1$) \\
 \hline
-non-voter ($X_i = 0$)  & \only<3-10>{$\hat{\alpha}$} & \only<4-10>{$\hat{\alpha} + \hat{\beta}_2$} \\
+non-voter ($X_i = 0$)  & \only<3-10hu>{$\hat{\alpha}$} & \only<4-10>{$\hat{\alpha} + \hat{\beta}_2$} \\
 voter ($X_i = 1$) & \only<5-10>{$\hat{\alpha} + \hat{\beta}_1$} & \only<6-10>{$\hat{\alpha} + \hat{\beta}_1 + \hat{\beta}_2$} \\
 \end{tabular}
 \end{center}
