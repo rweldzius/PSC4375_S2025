@@ -460,6 +460,11 @@ Villanova University makes every reasonable effort to allow members of the commu
 **Readings**:
  * M: QSS 4.3-4.5
 
+**Slides**:
+ * M: [Lecture 13](https://rweldzius.github.io/PSC4375_S2025/lectures/psc4375_lecture_13_slides_handout.pdf)
+ * W: [Lecture 14](https://rweldzius.github.io/PSC4375_S2025/lectures/psc4375_lecture_14_slides_handout.pdf)
+ * F: [Lecture 15](https://rweldzius.github.io/PSC4375_S2025/lectures/psc4375_lecture_15_slides_handout.pdf)
+
 **Assignments**:
  * QSS Tidyverse Tutorial 6 due Tuesday (03/11) by 11:59PM ET
  * Final Project proposal due Wednesday (03/12) by 11:59PM ET
