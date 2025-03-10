@@ -348,7 +348,7 @@ $$
   - Find the coefficients that minimizes the **sum of the squared residuals**:\pause
 
 $$
-\text{SSR} = \sum_{-=1}^{n}\hat{\epsilon_i^2} = (Y_i - \hat{\alpha} - \hat{\beta_1} X_{i1} - \hat{\beta_2} X_{i2})^2
+\text{SSR} = \sum_{i=1}^{n}\hat{\epsilon}_i^2 = (Y_i - \hat{\alpha} - \hat{\beta_1} X_{i1} - \hat{\beta_2} X_{i2})^2
 $$
 ---
 
@@ -367,24 +367,32 @@ $$
 
 # Comparing Model Fits
 
+\pause
 ```{r}
 summary(fit.app)$r.squared
+```
+\pause
+```{r}
 summary(mult.fit)$r.squared
+```
+\pause
+```{r}
 summary(mult.fit)$adj.r.squared
 ```
+
 
 ---
 
 # Binary and Categorical Predictors
 
 ```{r, echo=FALSE, out.width="35%",}
-knitr::include_graphics("figs/progesa.png")
+knitr::include_graphics("figs/progresa.png")
 ```
 
 \pause
 
   - Political effects of government programs\pause
-    - *Progesa*: Mexican conditional cash transfer program (CCT) from c. 2000\pause
+    - *Progresa*: Mexican conditional cash transfer program (CCT) from ~2000\pause
       - Welfare $ given if kids enrolled in schools, get regular check-ups, etc.\pause
     - Do these programs have political effects?\pause
       - Program had support from most parties.\pause
@@ -415,7 +423,7 @@ cct <- read.csv("../data/progresa.csv")
 # Difference in Means Estimates
 
 \footnotesize  
-  - Does CCT affect turnout?
+  - Does CCT affect turnout? \pause
 
 ```{r}
 cct.turn.ate <- cct %>% group_by(treatment) %>%
@@ -424,8 +432,9 @@ cct.turn.ate <- cct %>% group_by(treatment) %>%
   mutate(turnout_ate = `1` - `0`)
 cct.turn.ate$turnout_ate
 ```
-  
-  - Does CCT affect PRI (incumbent) votes?
+
+\pause  
+  - Does CCT affect PRI (incumbent) votes? \pause
  
 \footnotesize  
 ```{r}
@@ -468,12 +477,12 @@ $$
 
 \footnotesize  
 ```{r}
-cct.turn.ate <- cct %>% 
+cct.pri.ate <- cct %>% 
   group_by(treatment) %>%
-  summarize(t2000_mean = mean(t2000)) %>%
-  pivot_wider(names_from = treatment, values_from = t2000_mean) %>%
-  mutate(turnout_ate = `1` - `0`)
-cct.turn.ate$turnout_ate
+  summarize(pri2000s_mean = mean(pri2000s)) %>%
+  pivot_wider(names_from = treatment, values_from = pri2000s_mean) %>%
+  mutate(pri_ate = `1` - `0`)
+cct.pri.ate$pri_ate
 ```
 
 \pause
@@ -505,7 +514,9 @@ lm(pri2000s ~ treatment, data = cct)
 
 \pause
 \normalsize 
-  - Then include all but one of these binary variables:
+  - Then include all but one of these binary variables: 
+
+\vspace{-3pt}
 
 $$
 turnout_i = \alpha + \beta_1 \text{Republican}_i + \beta_2 \text{Independent}_i + \epsilon_i

@@ -13,17 +13,17 @@
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{cct.turn.ate }\OtherTok{\textless{}{-}}\NormalTok{ cct }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{cct.pri.ate }\OtherTok{\textless{}{-}}\NormalTok{ cct }\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{group\_by}\NormalTok{(treatment) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{t2000\_mean =} \FunctionTok{mean}\NormalTok{(t2000)) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{pivot\_wider}\NormalTok{(}\AttributeTok{names\_from =}\NormalTok{ treatment, }\AttributeTok{values\_from =}\NormalTok{ t2000\_mean) }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{turnout\_ate =} \StringTok{\textasciigrave{}}\AttributeTok{1}\StringTok{\textasciigrave{}} \SpecialCharTok{{-}} \StringTok{\textasciigrave{}}\AttributeTok{0}\StringTok{\textasciigrave{}}\NormalTok{)}
-\NormalTok{cct.turn.ate}\SpecialCharTok{$}\NormalTok{turnout\_ate}
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{pri2000s\_mean =} \FunctionTok{mean}\NormalTok{(pri2000s)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{pivot\_wider}\NormalTok{(}\AttributeTok{names\_from =}\NormalTok{ treatment, }\AttributeTok{values\_from =}\NormalTok{ pri2000s\_mean) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{mutate}\NormalTok{(}\AttributeTok{pri\_ate =} \StringTok{\textasciigrave{}}\AttributeTok{1}\StringTok{\textasciigrave{}} \SpecialCharTok{{-}} \StringTok{\textasciigrave{}}\AttributeTok{0}\StringTok{\textasciigrave{}}\NormalTok{)}
+\NormalTok{cct.pri.ate}\SpecialCharTok{$}\NormalTok{pri\_ate}
 \end{Highlighting}
 \end{Shaded}
 
 \begin{verbatim}
-## [1] 4.269676
+## [1] 3.622496
 \end{verbatim}
 
 \pause
