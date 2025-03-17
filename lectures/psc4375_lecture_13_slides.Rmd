@@ -1,5 +1,5 @@
 ---
-title: "PSC7475: Varying Effects by Group"
+title: "PSC4375: Varying Effects by Group"
 subtitle: "Week 8: Lecture 13"
 author: "Prof. Weldzius"
 institute: "Villanova University"
@@ -9,6 +9,7 @@ output:
     theme: "CambridgeUS"
     colortheme: "seahorse"
     fonttheme: "structurebold"
+    
 ---
 
 ```{css,echo = F}
@@ -30,7 +31,6 @@ knitr::knit_hooks$set(chunk = function(x, options) {
   ifelse(options$size != "normalsize", paste0("\n \\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
 })
 library(tidyverse)
-library(tinytex)
 ```
 
 # Week 8

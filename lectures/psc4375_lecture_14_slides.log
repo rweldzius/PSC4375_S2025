@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.10)  10 MAR 2025 13:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (TeX Live 2025) (preloaded format=pdflatex 2025.3.17)  17 MAR 2025 10:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
-**psc4375_lecture_13_slides.tex
-(./psc4375_lecture_13_slides.tex
+**psc4375_lecture_14_slides.tex
+(./psc4375_lecture_14_slides.tex
 LaTeX2e <2024-11-01> patch level 2
 L3 programming layer <2025-01-18>
 (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/beamer/beamer.cls
@@ -590,409 +590,39 @@ LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
 (Font)                  OT1/cmr/bx/it --> OT1/lmr/bx/it on input line 37.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
-) (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/beamer/beamerthemeCambridgeUS.sty (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty) (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty) (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/beamer/beamercolorthemebeaver.sty)) (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/beamer/beamercolorthemeseahorse.sty) (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/beamer/beamerfontthemestructurebold.sty) (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
-Package: fancyvrb 2024/01/20 4.5c verbatim text (tvz,hv)
-\FV@CodeLineNo=\count354
-\FV@InFile=\read3
-\FV@TabBox=\box78
-\c@FancyVerbLine=\count355
-\FV@StepNumber=\count356
-\FV@OutFile=\write5
-) (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/framed/framed.sty
-Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
-\OuterFrameSep=\skip69
-\fb@frw=\dimen299
-\fb@frh=\dimen300
-\FrameRule=\dimen301
-\FrameSep=\dimen302
-) (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.sty
+) (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/beamer/beamerthemeCambridgeUS.sty (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/beamer/beamerinnerthemerounded.sty) (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/beamer/beamerouterthemeinfolines.sty) (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/beamer/beamercolorthemebeaver.sty)) (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/beamer/beamercolorthemeseahorse.sty) (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/beamer/beamerfontthemestructurebold.sty) (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bookmark.sty
 Package: bookmark 2023-12-10 v1.31 PDF bookmarks (HO)
 (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-pdftex.def
 File: bkm-pdftex.def 2023-12-10 v1.31 bookmark driver for pdfTeX and luaTeX (HO)
-\BKM@id=\count357
+\BKM@id=\count354
 ))
-LaTeX Font Info:    Trying to load font information for T1+lmss on input line 157.
+LaTeX Font Info:    Trying to load font information for T1+lmss on input line 104.
 (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmss.fd
 File: t1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-05-08 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count358
-\l__pdf_internal_box=\box79
-)
-No file psc4375_lecture_13_slides.aux.
-\openout1 = `psc4375_lecture_13_slides.aux'.
-
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 157.
-LaTeX Font Info:    ... okay on input line 157.
-*geometry* driver: auto-detecting
-*geometry* detected driver: pdftex
-*geometry* verbose mode - [ preamble ] result:
-* driver: pdftex
-* paper: custom
-* layout: <same size as paper>
-* layoutoffset:(h,v)=(0.0pt,0.0pt)
-* modes: includehead includefoot 
-* h-part:(L,W,R)=(10.88002pt, 342.43532pt, 10.88002pt)
-* v-part:(T,H,B)=(0.0pt, 273.14662pt, 0.0pt)
-* \paperwidth=364.19536pt
-* \paperheight=273.14662pt
-* \textwidth=342.43532pt
-* \textheight=244.6939pt
-* \oddsidemargin=-61.38997pt
-* \evensidemargin=-61.38997pt
-* \topmargin=-72.26999pt
-* \headheight=14.22636pt
-* \headsep=0.0pt
-* \topskip=11.0pt
-* \footskip=14.22636pt
-* \marginparwidth=4.0pt
-* \marginparsep=10.0pt
-* \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
-* \hoffset=0.0pt
-* \voffset=0.0pt
-* \mag=1000
-* \@twocolumnfalse
-* \@twosidefalse
-* \@mparswitchfalse
-* \@reversemarginfalse
-* (1in=72.27pt=25.4mm, 1cm=28.453pt)
-
-(/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
-Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
-(/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
-))
-Package hyperref Info: Link coloring OFF on input line 157.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/lmr/m/n --> OT1/cmss/m/n on input line 157.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/lmr/bx/n --> OT1/cmss/b/n on input line 157.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/lmss/m/n on input line 157.
-LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmss/b/n --> OT1/lmss/b/n on input line 157.
-\symnumbers=\mathgroup6
-\sympureletters=\mathgroup7
-LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmr/m/n on input line 157.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 157.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 157.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/lmr/bx/n --> T1/lmss/b/n on input line 157.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 157.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/lmss/m/n --> T1/lmss/m/n on input line 157.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/lmss/bx/n --> T1/lmss/m/n on input line 157.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 157.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/lmr/m/it --> T1/lmss/m/it on input line 157.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/lmr/bx/it --> T1/lmss/m/it on input line 157.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 157.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 157.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/lmtt/m/n --> T1/lmtt/m/n on input line 157.
-LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 157.
-LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 157.
-LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/lmss/b/n --> T1/lmr/b/n on input line 157.
-LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  T1/lmss/b/n --> T1/lmss/b/n on input line 157.
-LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  T1/lmss/m/n --> T1/lmss/b/n on input line 157.
-LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  T1/lmss/m/it --> T1/lmss/b/it on input line 157.
-LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  T1/lmtt/m/n --> T1/lmtt/b/n on input line 157.
-(/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
-Dictionary: translator-basic-dictionary, Language: English 
-) (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/translator/translator-bibliography-dictionary-English.dict
-Dictionary: translator-bibliography-dictionary, Language: English 
-) (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/translator/translator-environment-dictionary-English.dict
-Dictionary: translator-environment-dictionary, Language: English 
-) (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/translator/translator-months-dictionary-English.dict
-Dictionary: translator-months-dictionary, Language: English 
-) (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/translator/translator-numbers-dictionary-English.dict
-Dictionary: translator-numbers-dictionary, Language: English 
-) (/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
-Dictionary: translator-theorem-dictionary, Language: English 
-)
-No file psc4375_lecture_13_slides.nav.
-
-
-[1
-
-{/Users/rweldziu/Library/TinyTeX/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/Users/rweldziu/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc}]
-
-[2
-
-]
-
-[3
-
-]
-
-[4
-
-]
-
-[5
-
-]
-
-[6
-
-]
-
-[7
-
-]
-LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 211.
-(/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/lm/ot1lmss.fd
-File: ot1lmss.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 211.
-(/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 211.
-(/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/lm/omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 211.
-(/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/lm/omxlmex.fd
-File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 211.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <7> on input line 211.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 211.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 211.
-(/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 211.
-(/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 211.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <7> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 211.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <5> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 211.
-
-
-[8
-
-{/Users/rweldziu/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/Users/rweldziu/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}]
-
-[9
-
-]
-
-[10
-
-]
-
-[11
-
-]
-
-[12
-
-]
-\openout4 = `psc4375_lecture_13_slides.vrb'.
-
-(./psc4375_lecture_13_slides.vrb
-<figs/socialpressure.png, id=116, 1203.49625pt x 740.7675pt>
-File: figs/socialpressure.png Graphic file (type png)
-<use figs/socialpressure.png>
-Package pdftex.def Info: figs/socialpressure.png  used on input line 5.
-(pdftex.def)             Requested size: 171.20618pt x 105.37961pt.
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 12.
-(/Users/rweldziu/Library/TinyTeX/texmf-dist/tex/latex/lm/t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-))
-
-[13
-
- <./figs/socialpressure.png>] (./psc4375_lecture_13_slides.vrb
-File: figs/socialpressure.png Graphic file (type png)
-<use figs/socialpressure.png>
-Package pdftex.def Info: figs/socialpressure.png  used on input line 5.
-(pdftex.def)             Requested size: 171.20618pt x 105.37961pt.
-)
-
-[14
-
-] (./psc4375_lecture_13_slides.vrb
-File: figs/socialpressure.png Graphic file (type png)
-<use figs/socialpressure.png>
-Package pdftex.def Info: figs/socialpressure.png  used on input line 5.
-(pdftex.def)             Requested size: 171.20618pt x 105.37961pt.
-)
-
-[15
-
-] (./psc4375_lecture_13_slides.vrb
-File: figs/socialpressure.png Graphic file (type png)
-<use figs/socialpressure.png>
-Package pdftex.def Info: figs/socialpressure.png  used on input line 5.
-(pdftex.def)             Requested size: 171.20618pt x 105.37961pt.
-)
-
-[16
-
-] (./psc4375_lecture_13_slides.vrb
-File: figs/socialpressure.png Graphic file (type png)
-<use figs/socialpressure.png>
-Package pdftex.def Info: figs/socialpressure.png  used on input line 5.
-(pdftex.def)             Requested size: 171.20618pt x 105.37961pt.
-)
-
-[17
-
-] (./psc4375_lecture_13_slides.vrb
-File: figs/socialpressure.png Graphic file (type png)
-<use figs/socialpressure.png>
-Package pdftex.def Info: figs/socialpressure.png  used on input line 5.
-(pdftex.def)             Requested size: 171.20618pt x 105.37961pt.
-)
-
-[18
-
-]
-\openout4 = `psc4375_lecture_13_slides.vrb'.
-
-(./psc4375_lecture_13_slides.vrb
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 21.
-)
-
-[19
-
-] (./psc4375_lecture_13_slides.vrb)
-
-[20
-
-] (./psc4375_lecture_13_slides.vrb)
-
-[21
-
-]
-\openout4 = `psc4375_lecture_13_slides.vrb'.
-
-(./psc4375_lecture_13_slides.vrb
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <9> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 13.
-)
-
-[22
-
-] (./psc4375_lecture_13_slides.vrb)
-
-[23
-
-]
-\openout4 = `psc4375_lecture_13_slides.vrb'.
-
-(./psc4375_lecture_13_slides.vrb)
-
-[24
-
-] (./psc4375_lecture_13_slides.vrb)
-
-[25
-
-]
-\openout4 = `psc4375_lecture_13_slides.vrb'.
-
-(./psc4375_lecture_13_slides.vrb)
-
-[26
-
-] (./psc4375_lecture_13_slides.vrb)
-
-[27
-
-] (./psc4375_lecture_13_slides.vrb)
-
-[28
-
-]
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 394.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 394.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 394.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <10.95> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 394.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <8> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 394.
-LaTeX Font Info:    Font shape `T1/lmss/m/it' in size <6> not available
-(Font)              Font shape `T1/lmss/m/sl' tried instead on input line 394.
-
-
-[29
-
-{/Users/rweldziu/Library/TinyTeX/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}]
-
-[30
-
-]
-
-[31
-
-]
-
-[32
-
-]
-
-[33
-
-]
-! Missing = inserted for \ifnum.
-<to be read again> 
-                   h
-l.428 \end{frame}
-                 
-I was expecting to see `<', `=', or `>'. Didn't.
+\l__color_backend_stack_int=\count355
+\l__pdf_internal_box=\box78
+) (./psc4375_lecture_14_slides.aux)
+Runaway argument?
+{\headcommand {\slideentry {0}{0}{15}{36/36 
+! File ended while scanning use of \@writefile.
+<inserted text> 
+                \par 
+l.104 \begin{document}
+                      
+I suspect you have forgotten a `}', causing me
+to read past where you wanted me to stop.
+I'll try to recover; but if the error is serious,
+you'd better type `E' or `X' now and fix your file.
 
  
 Here is how much of TeX's memory you used:
- 22861 strings out of 475171
- 445541 string characters out of 5765149
- 801737 words of memory out of 5000000
- 45266 multiletter control sequences out of 15000+600000
- 637305 words of font info for 93 fonts, out of 8000000 for 9000
+ 21116 strings out of 475171
+ 408093 string characters out of 5765149
+ 777890 words of memory out of 5000000
+ 43715 multiletter control sequences out of 15000+600000
+ 562985 words of font info for 40 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 101i,16n,107p,421b,662s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 101i,0n,107p,421b,446s stack positions out of 10000i,1000n,20000p,200000b,200000s
 !  ==> Fatal error occurred, no output PDF file produced!
