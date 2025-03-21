@@ -52,7 +52,9 @@ library(tidyverse)
 ```{r}
 data(social, package="qss")
 social <- social %>%
-  mutate(age = 2006 - yearofbirth)
+  filter(messages %in% c("Neighbors","Control")) %>%
+  mutate(age = 2006 - yearofbirth,
+         treatment = ifelse(messages=="Neighbors",1,0))
 summary(social$age)
 ```
 
@@ -123,7 +125,7 @@ social.neighbor <- social %>%
 
 social %>%
   ggplot() +
-  geom_smooth(data = social %>% filter(messages=="Control"), aes(x=age, y=primary2006), method="lm", se=F, color="blue") +
+  geom_smooth(data = social %>% filter(messages=="Control"), aes(x=age, y=primary2006), method="lm", se=F, color="blue", formula = y ~ x) +
   annotate("text", 
            x = 40, y = 0.2, 
            label = "Control", 
@@ -139,16 +141,16 @@ social %>%
 ```{r, echo=F,fig.width=4, fig.height=3}
 social %>%
   ggplot() +
-  geom_smooth(data = social %>% filter(messages=="Control"), aes(x=age, y=primary2006), method="lm", se=F, color="blue") +
+  geom_smooth(data = social %>% filter(messages=="Control"), aes(x=age, y=primary2006), method="lm", se=F, color="blue", formula = y ~ x) +
   annotate("text", 
            x = 40, y = 0.2, 
            label = "Control", 
            color = "blue", 
            size = 4) +
-  geom_smooth(data = social %>% filter(messages=="Neighbors"), aes(x=age, y=primary2006), method="lm", se=F, color="red") +
+  geom_smooth(data = social %>% filter(messages=="Control"), aes(x=age, y=primary2006 +0.081), method="lm", se=F, color="red", formula = y ~ x) +
   annotate("text", 
            x = 40, y = 0.4, 
-           label = "Control", 
+           label = "Neighbors", 
            color = "red", 
            size = 4) +
   labs(x = "Age", y = "Predicted Turnout Rate") +
@@ -164,17 +166,17 @@ social %>%
   ggplot() +
   geom_smooth(data = social %>% filter(messages=="Control"), aes(x=age, y=primary2006), method="lm", se=F, color="blue") +
   annotate("text", x = 40, y = 0.2, label = "Control", color = "blue", size = 4) +
-  geom_smooth(data = social %>% filter(messages=="Neighbors"), aes(x=age, y=primary2006), method="lm", se=F, color="red") +
+  geom_smooth(data = social %>% filter(messages=="Control"), aes(x=age, y=primary2006 +0.081), method="lm", se=F, color="red", formula = y ~ x) +
   annotate("text", 
            x = 40, y = 0.4, 
-           label = "Control", 
+           label = "Neighbor", 
            color = "red", 
            size = 4) +
   annotate("segment", x = 40, y = 0.26, xend = 40, yend = 0.33, 
            arrow = arrow(type = "closed", length = unit(0.1, "inches")), 
            size = .4, color = "black") +
   annotate("text", x = 43, y = 0.31, 
-           label = expression(hat(beta)), 
+           label = expression(hat(beta)[2]), 
            color = "black", size = 3) +
   labs(x = "Age", y = "Predicted Turnout Rate") +
   theme_bw()
@@ -275,14 +277,14 @@ $$
   - You can use the `:` way to create interaction terms like last time:
 
 ```{r}
-int.fit <- lm(primary2006 ~ age + neighbors + age:neighbors, data = social.neighbor)
+int.fit <- lm(primary2006 ~ age + treatment + age:treatment, data = social)
 coef(int.fit)
 ```
 
   - Or you can use the `var1 * var2` shortcut, which will add both variable and their interaction:
 
 ```{r}
-int.fit2 <- lm(primary2006 ~ age*neighbors, data = social.neighbor)
+int.fit2 <- lm(primary2006 ~ age*treatment, data = social)
 coef(int.fit2)
 ```
 
