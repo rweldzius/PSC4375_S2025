@@ -1,5 +1,5 @@
 ---
-title: "Problem Set 3 (ANSWER KEY)"
+title: "Problem Set 3"
 subtitle: "Election and Conditional Cash Transfer Program in Mexico"
 author: "Prof. Weldzius"
 institute: "Villanova University"
