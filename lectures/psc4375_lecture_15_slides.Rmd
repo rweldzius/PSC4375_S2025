@@ -16,6 +16,7 @@ header-includes:
   - \usepackage{fontenc}
   - \usepackage{xcolor}    
   - \usepackage{array}
+classoption: "handout"
 ---
 
 ```{css,echo = F}
