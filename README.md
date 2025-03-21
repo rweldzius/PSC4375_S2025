@@ -129,7 +129,7 @@ The schedule for the problem sets will be:
 
 | Problem Set | Topic | Release Date | Due Date | 
 |:-----|:-----|:-----|:-----|
-| PSet 1 | Randomized Experiments | Fri (01/24) 12:00PM ET | Fri (01/31) 11:59PM ET|
+|  1 | Randomized Experiments | Fri (01/24) 12:00PM ET | Fri (01/31) 11:59PM ET|
 | PSet 2 | Summarizing Data | Fri (02/07) 12:00PM ET | Fri (02/14) 11:59PM ET ❤️|
 | PSet 3 | Regression | Fri (03/14) 12:00PM ET  | Fri (03/28) 11:59PM ET |
 | PSet 4 | Inference | Fri (04/04) 12:00PM ET | Wed (04/16) 11:59PM ET |
@@ -295,7 +295,7 @@ Villanova University makes every reasonable effort to allow members of the commu
 | [7](#week-7) | 03/03 | Spring Break |  |
 | [8](#week-8) | 03/10 | Prediction: Interactions & Nonlinearities  | T: QSS Tutorial 6   <br /> W: Final project proposal|
 | [9](#week-9) | 03/17 | Probability: Basics | T: QSS Tutorial 7 |
-| [10](#week-10) | 03/24 | Probability: Random Variables & Large Samples | T: QSS Tutorial 8 <br /> F: PSet 3   |
+| [10](#week-10) | 03/24 | Probability: Random Variables & Large Samples | T: QSS Tutorial 8 <br /> F: [PSet 3](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset3.Rmd)   |
 | [11](#week-11) | 03/31 | Inference: Estimation | T: QSS Tutorial 9   |
 | [12](#week-12) | 04/07 | Inference: Hypothesis Testing  |  T: QSS Tutorial 10  <br /> W: Final project draft |
 | [13](#week-13) | 04/14 | Inference: Uncertainty in Regression | W: PSet 4  |
@@ -480,11 +480,11 @@ Villanova University makes every reasonable effort to allow members of the commu
  * M: QSS 6.1-6.2
 
 **Slides**:
- * W: [Lecture 15](https://rweldzius.github.io/PSC4375_S2025/lectures/psc4375_lecture_15_slides_handout.pdf) Part I (slides 1-7)
+ * W: [Lecture 15](https://rweldzius.github.io/PSC4375_S2025/lectures/psc4375_lecture_15_slides_handout.pdf)
 
 **Assignments**:
  * QSS Tutorial 7 due Thursday (03/20) by 11:59PM ET
- * Problem Set 3 posted
+ * [Problem Set 3](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset3.Rmd) posted
 
 [Back to schedule](#schedule)
 
@@ -499,7 +499,7 @@ Villanova University makes every reasonable effort to allow members of the commu
 
 **Assignments**:
  * QSS Tutorial 8 due Tuesday (03/25) by 11:59PM ET
- * Problem Set 3 due by Friday (03/28) by 11:59PM ET
+ * [Problem Set 3](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset3.Rmd) due by Friday (03/28) by 11:59PM ET
   
 [Back to schedule](#schedule)
 
