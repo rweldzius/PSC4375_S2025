@@ -497,6 +497,9 @@ Villanova University makes every reasonable effort to allow members of the commu
 **Readings**:
  * M: QSS 6.3-6.5
 
+**Slides**:
+ * W: [Lecture 16](https://rweldzius.github.io/PSC4375_S2025/lectures/psc4375_lecture_16_slides_handout.pdf) (updated on 3/24)
+
 **Assignments**:
  * QSS Tutorial 8 due Tuesday (03/25) by 11:59PM ET
  * [Problem Set 3](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset3.Rmd) due by Friday (03/28) by 11:59PM ET
