@@ -1,9 +1,9 @@
 ---
 title: "Problem Set 3"
 subtitle: "Election and Conditional Cash Transfer Program in Mexico"
-author: "Prof. Weldzius"
+author: "[YOUR NAME]"
 institute: "Villanova University"
-date: "Due Date: 2025-02-14 by 11:59PM ET"
+date: "Due Date: 2025-03-28 by 11:59PM ET"
 output:
   pdf_document: default
   html_document: default
@@ -13,7 +13,6 @@ header-includes:
   - \fancypagestyle{plain}{\pagestyle{fancy}}
   - \fancyhead[L]{}
   - \fancyhead[C]{}
----
 ---
 
 ```{r setup, include=FALSE}
