@@ -481,8 +481,9 @@ Villanova University makes every reasonable effort to allow members of the commu
 
 **Slides**:
  * [Lecture 15](https://rweldzius.github.io/PSC4375_S2025/lectures/psc4375_lecture_15_slides_handout.pdf)
+ * [Lecture 15 (Bayes Rule)](https://rweldzius.github.io/PSC4375_S2025/lectures/psc4375_lecture_15_slides_bayes.pdf)
 
-**Assignments**:
+**Assignments**
  * QSS Tutorial 7 due Thursday (03/20) by 11:59PM ET
  * [Problem Set 3](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset3.Rmd) posted
 
