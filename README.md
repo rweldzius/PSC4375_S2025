@@ -514,7 +514,10 @@ Villanova University makes every reasonable effort to allow members of the commu
 **Dates**: 03/31 - 04/04
 
 **Readings**:
- * M: QSS  7.1 
+ * M: QSS  7.1
+
+**Slides**:
+ * [Lecture 17](https://rweldzius.github.io/PSC4375_S2025/lectures/psc4375_lecture_17_slides_handout.pdf)
 
 **Assignments**:
  * QSS Tutorial 9 due Tuesday (04/01) by 11:59PM ET
@@ -532,6 +535,9 @@ Villanova University makes every reasonable effort to allow members of the commu
 **Readings**:
  * M: QSS 7.2
 
+**Slides**:
+ * [Lecture 18](https://rweldzius.github.io/PSC4375_S2025/lectures/psc4375_lecture_18_slides_handout.pdf)
+
 **Assignments**:
  * QSS Tutorial 10 due Tuesday (04/08) by 11:59PM ET
 
@@ -548,7 +554,7 @@ Villanova University makes every reasonable effort to allow members of the commu
 
 **Assignments**:
  * No more tutorials! Let's goooo!
- * [Problem Set 4](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset4.Rmd) due Wednesday (04/16) by 11:59PM ET
+ * [Problem Set 4](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset4.Rmd) due Friday (04/25) by 11:59PM ET
 
 [Back to schedule](#schedule)
 
@@ -559,7 +565,7 @@ Villanova University makes every reasonable effort to allow members of the commu
 **Dates**: 04/21 - 04/25 (No class on Monday 04/21 for Easter Recess)
 
 **Assignments**:
- * Exam 2 due Friday (04/25) by 11:59PM ET
+ * Exam 2 due Friday (05/09) by 11:59PM ET
 
 [Back to schedule](#schedule)
 
