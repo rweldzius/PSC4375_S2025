@@ -1,0 +1,196 @@
+---
+title: "Currency Wars in Retreat"
+subtitle: "How Global Value Chains Affect Exchange Rate Politics"
+author: "Prof. Weldzius"
+institute: "Villanova University"
+date: "Slides Updated: `r Sys.Date()`"
+output:
+  beamer_presentation:
+    theme: "CambridgeUS"
+    colortheme: "seahorse"
+    fonttheme: "structurebold"
+header-includes:
+  - \usepackage{tikz}
+  - \usepackage{graphicx} 
+  - \usepackage{amssymb}
+  - \usepackage{fontenc}
+  - \usepackage{xcolor}    
+  - \usepackage{array}
+# classoption: "handout"  
+---
+
+```{css,echo = F}
+.small .remark-code { /*Change made here*/
+  font-size: 85% !important;
+}
+.tiny .remark-code { /*Change made here*/
+  font-size: 50% !important;
+}
+```
+
+```{r,include=F}
+set.seed(123)
+options(width=60)
+knitr::opts_chunk$set(fig.align='center',fig.width=9,fig.height=5,message=F,warning=F)
+def.chunk.hook  <- knitr::knit_hooks$get("chunk")
+knitr::knit_hooks$set(chunk = function(x, options) {
+  x <- def.chunk.hook(x, options)
+  ifelse(options$size != "normalsize", paste0("\n \\", options$size,"\n\n", x, "\n\n \\normalsize"), x)
+})
+library(tidyverse)
+library(tinytex)
+library(gridExtra)
+```
+
+# Are Currency Wars in Retreat?
+
+- Exchange rate undervaluation worked for decades \pause
+  - Japan (1970-1985) \pause
+  - Germany (pre-EMU) \pause
+  - China (1995-2005) \pause
+  - Taiwan, South Korea, Israel, Sweden, etc. \pause
+- By 2018, this practice has stopped; why?   \pause
+- Argument: global value chains undercut the benefits of this strategy
+
+
+---
+
+# Global Value Chains over time
+
+```{r, echo=FALSE, fig.height=3, fig.width=4}
+# echo = FALSE stops Rmarkdown from showing anything in this chunk when you knit 
+# fig.height and fig.width might need to be adjusted
+
+df <- read_csv("~/Downloads/currencymanip2020.csv")
+
+df %>%
+  mutate(gvc_exp = exp(l_gvc_exp)) %>%
+  filter(gvc_exp<15) %>%
+  group_by(year) %>%
+  mutate(gvc_exp_mean = mean(gvc_exp)) %>%
+  ggplot(aes(x=year, y=gvc_exp, group=country_cd)) +
+  geom_line(alpha=0) +
+  geom_line(aes(x=year, y=gvc_exp_mean), size=1, alpha=0) +
+  labs(x = "", y = "Global value chains/exports (%)") +
+  scale_x_continuous(limits=c(1990,2020), breaks=seq(1990,2020,5)) +
+  theme_bw()
+```
+
+---
+
+# Global Value Chains over time
+
+```{r, echo=FALSE, fig.height=3, fig.width=4}
+# echo = FALSE stops Rmarkdown from showing anything in this chunk when you knit 
+# fig.height and fig.width might need to be adjusted
+df %>%
+  mutate(gvc_exp = exp(l_gvc_exp)) %>%
+  filter(gvc_exp<15) %>%
+  group_by(year) %>%
+  mutate(gvc_exp_mean = mean(gvc_exp)) %>%
+  ggplot(aes(x=year, y=gvc_exp, group=country_cd)) +
+  geom_line(alpha=.25) +
+  geom_line(aes(x=year, y=gvc_exp_mean), size=1, alpha=0) +
+  labs(x = "", y = "Global value chains/exports (%)") +
+  scale_x_continuous(limits=c(1990,2020), breaks=seq(1990,2020,5)) +
+  theme_bw()
+```
+
+---
+
+# Global Value Chains over time
+
+```{r, echo=FALSE, fig.height=3, fig.width=4}
+# echo = FALSE stops Rmarkdown from showing anything in this chunk when you knit 
+# fig.height and fig.width might need to be adjusted
+df %>%
+  mutate(gvc_exp = exp(l_gvc_exp)) %>%
+  filter(gvc_exp<15) %>%
+  group_by(year) %>%
+  mutate(gvc_exp_mean = mean(gvc_exp)) %>%
+  ggplot(aes(x=year, y=gvc_exp, group=country_cd)) +
+  geom_line(alpha=.25) +
+  geom_line(aes(x=year, y=gvc_exp_mean), size=1, color="red") +
+  labs(x = "", y = "Global value chains/exports (%)") +
+  scale_x_continuous(limits=c(1990,2020), breaks=seq(1990,2020,5)) +
+  theme_bw()
+```
+
+---
+
+# What do I expect?
+
+- Hypothesis 1: the more dependent on trade, the more likely a country is to devalue their exchange rate \pause
+
+- Hypothesis 2: the more dependent on trade, conditional on your global value chain dependence, the **less** likely to devalue \pause 
+
+\begin{align*}
+\text{devaluation}_{it} = & \alpha_{it} + \beta_1 (\text{export dependence})_{it} + \beta_2 (\text{GVC dependence})_{it} + \\
+& \beta_3 (\text{export dependence})_{it}\times(\text{GVC dependence})_{it} + \epsilon_{it}
+\end{align*}
+
+- $i$ indicates country
+- $t$ indicates year
+
+---
+
+# Does GVC dependence impact exchange rate policy?
+
+```{r message=FALSE, include=FALSE} 
+# Here you can include your statistical model. You'll want to output the results in a readable way. 
+# Use this link to help with formatting these tables (see "regression table"); note that you'll have to use some new libraries (and note what they include at the beginning of the R chunk, e.g., "message = FALSE"): https://zief0002.github.io/book-8252/pretty-printing-tables-in-markdown.html
+library(lfe)
+df$country_factor <- as.factor(df$country_cd)
+df$year_factor <- as.factor(df$year)
+
+m1 <- felm(l_forex_gdp_f1 ~ l_exp_goods_gdp | year_factor + country_factor | 0 | country_factor, data=df)
+
+m2 <- felm(l_forex_gdp_f1 ~ l_exp_goods_gdp*l_gvc_exp | year_factor + country_factor | 0 | country_factor, data=df)
+```
+
+```{r echo=FALSE, warning=FALSE, message=FALSE, results='asis'} 
+library(stargazer)
+table <- stargazer(m1, m2, 
+          type = "latex",
+          header = FALSE,
+          no.space = TRUE,
+          float = FALSE,
+          keep.stat = c("n","adj.rsq"), # only keep what I need
+          column.labels = c("Model 1", "Model 2"),
+          colnames = FALSE,
+          model.numbers = FALSE,
+          dep.var.caption = " ",
+          dep.var.labels = "",
+          covariate.labels = c("Exports/GDP", "GVC/Exports","(Exp/GDP)x(GVC/Exp)"),
+          notes.align = "l"
+)
+
+#table <- table[-c(3:7)] # removes the top lines of the Stargazer table so we can see more rows
+cat(paste(table, collapse = "\n"))
+```
+
+---
+
+# Conclusion and next steps
+
+- The data supports my hypotheses: export dependence *does* lead to currency undervaluation, but this relationship is moderated by global value chain dependence \pause 
+- Next steps: \pause
+
+  1. What control variables should I include? \pause
+  2. I used a linear model, but could there be a non-linear relationship?
+
+---
+
+# Appendix 1
+
+```{r, echo=FALSE, fig.height=3, fig.width=4}
+# echo = FALSE stops Rmarkdown from showing anything in this chunk when you knit 
+# fig.height and fig.width might need to be adjusted
+
+df <- read_csv("~/Downloads/currencymanip2020.csv")
+
+df %>%
+  mutate(gvc_exp = exp(l_gvc_exp)) %>%
+  ggplot(aes(x=l_gvc_exp)) +
+  geom_density()
+```
