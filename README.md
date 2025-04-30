@@ -299,9 +299,9 @@ Villanova University makes every reasonable effort to allow members of the commu
 | [11](#week-11) | 03/31 | Inference: Estimation | T: QSS Tutorial 9   |
 | [12](#week-12) | 04/07 | Inference: Hypothesis Testing  |  T: QSS Tutorial 10  |
 | [13](#week-13) | 04/14 | Inference: Uncertainty in Regression | W: [PSet 4](https://github.com/rweldzius/PSC4375_S2025/blob/main/psets/psc4375_s25_pset4.Rmd)  |
-| [14](#week-14) | 04/21 | Class Presentations  | F: Exam 2   |
+| [14](#week-14) | 04/21 | Class Presentations  |    |
 | [15](#week-15) | 04/28 | Class Presentations  | M: Final project draft  |
-| [16](#week-16) | 05/05 | Final project due Friday (05/09) by 11:59PM ET | F: Final project  |
+| [16](#week-16) | 05/05 | Final project/Exam 2 due Friday (05/09) by 11:59PM ET | F: [Exam 2](https://github.com/rweldzius/PSC4375_S2025/blob/main/exams/psc4375_s25_exam2.Rmd) <br /> F: Final project  |
 
 [Back to ToC](#table-of-contents)
 
@@ -564,9 +564,6 @@ Villanova University makes every reasonable effort to allow members of the commu
 
 **Dates**: 04/21 - 04/25 (No class on Monday 04/21 for Easter Recess)
 
-**Assignments**:
- * Exam 2 due Friday (05/09) by 11:59PM ET
-
 [Back to schedule](#schedule)
 
 ## Week 15
@@ -576,18 +573,19 @@ Villanova University makes every reasonable effort to allow members of the commu
 **Dates**: 04/28 & 04/30
 
 **Assignments**:
- * Final Project *draft* analysis due Monday (04/30) by 11:59AM ET
+ * Final Project *draft* analysis due Monday (04/28) by 11:59AM ET
 
 [Back to schedule](#schedule)
 
 ## Week 16
 
-**Topic**: Final projects Due
+**Topic**: Final projects/Exam 2 Due
 
 **Dates**: 05/09
 
 **Assignments**:
  * Final project write-up due Friday (05/09) by 11:59PM ET
+ * Exam 2 due Friday (05/09) by 11:59PM ET
 
 [Back to schedule](#schedule)
 
