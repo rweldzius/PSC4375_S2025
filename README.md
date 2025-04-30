@@ -564,9 +564,6 @@ Villanova University makes every reasonable effort to allow members of the commu
 
 **Dates**: 04/21 - 04/25 (No class on Monday 04/21 for Easter Recess)
 
-**Assignments**:
- * Exam 2 due Friday (05/09) by 11:59PM ET
-
 [Back to schedule](#schedule)
 
 ## Week 15
@@ -576,18 +573,19 @@ Villanova University makes every reasonable effort to allow members of the commu
 **Dates**: 04/28 & 04/30
 
 **Assignments**:
- * Final Project *draft* analysis due Monday (04/30) by 11:59AM ET
+ * Final Project *draft* analysis due Monday (04/28) by 11:59AM ET
 
 [Back to schedule](#schedule)
 
 ## Week 16
 
-**Topic**: Final projects Due
+**Topic**: Final projects/Exam 2 Due
 
 **Dates**: 05/09
 
 **Assignments**:
  * Final project write-up due Friday (05/09) by 11:59PM ET
+ * Exam 2 due Friday (05/09) by 11:59PM ET
 
 [Back to schedule](#schedule)
 
